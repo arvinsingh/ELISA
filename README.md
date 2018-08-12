@@ -1,5 +1,5 @@
-# Project-FakeNewsDetection
-Fake News Detection using Statistical Analysis.
+# Project-Fake News Detection
+Fake News Detection using AI.
 
 # Table of Content
   1) <a href="DPF.md">Draft Proposal Form</a>
