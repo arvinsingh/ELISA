@@ -9,9 +9,9 @@
 ## qq
 
 ###### Features
-> Detect click bait links
-> Decentralized News application
-> Social Media Fake News detection
-> 
-
+- Detect click bait links
+- Decentralized News application
+- Social Media Fake News detection
+- Retraining model on daily basis (using News Websites)
+- 
 
