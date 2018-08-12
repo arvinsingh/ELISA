@@ -1,8 +1,8 @@
 # Project-FakeNewsDetection
 Fake News Detection using Statistical Analysis.
 
-- Table of Content
-  1) # <a href="DPF.md">Draft Proposal Form</a>
+# Table of Content
+  1) <a href="DPF.md">Draft Proposal Form</a>
 
 ###### Resources
 - https://github.com/fake-news-detector
