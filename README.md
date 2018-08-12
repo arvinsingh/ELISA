@@ -2,7 +2,7 @@
 Fake News Detection using AI.
 
 # Table of Content
-  1) <a href="DPF.md">Draft Proposal Form</a>
+  1) <a href="DOC/DPF.md">Draft Proposal Form</a>
 
 ###### Resources
 - https://github.com/fake-news-detector
