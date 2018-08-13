@@ -16,11 +16,11 @@ They are more of a threat than nuisance now more than ever. Mainly because of sh
 ## Learning Outcomes
 - Various Machine Learning algorithms used in industries to solve problems.
 - Mathematics used for developing ML algorithms.
-- Version control
+- Version control using Git.
+- Working of Decentralised apps. 
 
 ## Features
 - Detect click bait links
 - Decentralized News application
 - Social Media Fake News detection
 - Retraining model on daily basis (using News Websites)
-
