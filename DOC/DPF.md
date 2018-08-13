@@ -7,6 +7,9 @@
 ## Why Fake News Detection
 
 ## Major Challenges
+- Hardware Requirements
+- Feature Extraction
+- Accuracy
 
 ## Learning Outcomes
 
