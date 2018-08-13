@@ -1,6 +1,10 @@
-# Project-Fake News Detection
-Fake News Detection using AI.
+# ELISA (Exploratory Liable Information Scanning of Articles) - The AI for Fake News Detection
 
+# Team
+  1) Arvinder Pal Singh Bali (8615130)
+  2) Mexson Fernandes (8615208)
+  3) Sourabh Choubey (8615125)
+  
 # Table of Content
   1) <a href="DOC/DPF.md">Draft Proposal Form</a>
 
