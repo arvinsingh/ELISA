@@ -18,7 +18,7 @@ They are more of a threat than nuisance now more than ever. Mainly because of sh
 - Mathematics used for developing ML algorithms.
 - Version control
 
-###### Features
+## Features
 - Detect click bait links
 - Decentralized News application
 - Social Media Fake News detection
