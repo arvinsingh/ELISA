@@ -37,3 +37,5 @@
   - http://www.boatos.org/
 - Bot detection
   - http://botson.net/
+- PDCA Cycle
+  - https://dzone.com/articles/qa-for-machine-learning-models-with-the-pdca-cycle
