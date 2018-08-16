@@ -6,7 +6,7 @@
   3) Sourabh Choubey (8615125)
   
 # Table of Content
-  1) <a href="DOC/DPF.md">Draft Proposal Form</a>
+  1) <a href="docs/DPF.md">Draft Proposal Form</a>
 
 ###### Resources
 - https://github.com/fake-news-detector
