@@ -1,14 +1,14 @@
-# ELISA (Exploratory Liable Information Scanning of Articles) - The AI for Fake News Detection
+# ``ELISA`` (Exploratory Liable Information Scanning of Articles) - The AI for Fake News Detection
 
-# Team
+# ``Team``
   1) Arvinder Pal Singh Bali (8615130)
   2) Mexson Fernandes (8615208)
   3) Sourabh Choubey (8615125)
   
-# Table of Content
+# ``Table of Content``
   1) <a href="docs/DPF.md">Draft Proposal Form</a>
 
-###### Resources
+###### ``Resources``
 - https://github.com/fake-news-detector
 - https://medium.com/@Genyunus/detecting-fake-news-with-nlp-c893ec31dee8
 - https://thetrustproject.org/
