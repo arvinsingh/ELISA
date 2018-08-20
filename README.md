@@ -37,5 +37,7 @@
   - http://www.boatos.org/
 - Bot detection
   - http://botson.net/
+- Chat Bots
+  - https://www.nbcnews.com/politics/2016-election/nbcnews-launches-nbc-politics-bot-facebook-messenger-n663821
 - PDCA Cycle
   - https://dzone.com/articles/qa-for-machine-learning-models-with-the-pdca-cycle
