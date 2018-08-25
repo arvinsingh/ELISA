@@ -1,14 +1,14 @@
-# ELISA (Exploratory Liable Information Scanning of Articles) - The AI for Fake News Detection
+# ``ELISA`` (Exploratory Liable Information Scanning of Articles) - The AI for Fake News Detection
 
-# Team
+# ``Team``
   1) Arvinder Pal Singh Bali (8615130)
   2) Mexson Fernandes (8615208)
   3) Sourabh Choubey (8615125)
   
-# Table of Content
+# ``Table of Content``
   1) <a href="docs/DPF.md">Draft Proposal Form</a>
 
-###### Resources
+###### ``Resources``
 - https://github.com/fake-news-detector
 - https://medium.com/@Genyunus/detecting-fake-news-with-nlp-c893ec31dee8
 - https://thetrustproject.org/
@@ -37,5 +37,7 @@
   - http://www.boatos.org/
 - Bot detection
   - http://botson.net/
+- Chat Bots
+  - https://www.nbcnews.com/politics/2016-election/nbcnews-launches-nbc-politics-bot-facebook-messenger-n663821
 - PDCA Cycle
   - https://dzone.com/articles/qa-for-machine-learning-models-with-the-pdca-cycle
