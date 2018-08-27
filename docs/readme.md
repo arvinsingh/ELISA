@@ -1,9 +1,5 @@
-## Dcoumentation here
+# Documentation
 
-
-#### New doc:
-
-  -SECONDARY RESEARCH
-    -Competative analysis of existing systems
-    -List of functionalities
-    -
+- Background
+ - Competitive analysis of Existing system
+ - List of Functionalities
