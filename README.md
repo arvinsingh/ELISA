@@ -16,6 +16,7 @@
 - https://thetrustproject.org/
 - https://www.newstracker.org/
 - https://machinebox.io/docs/fakebox
+- https://github.com/chen0040/keras-fake-news-generator-and-detector
 - Fake News Websites
   - https://en.wikipedia.org/wiki/List_of_fake_news_websites
   - http://fakenewswatch.com/
