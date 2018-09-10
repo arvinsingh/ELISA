@@ -11,7 +11,7 @@
   3) <a href="Datasets/">Dataset</a>
 
 # ``Work Flow Diagram``
-  <img src="https://www.canva.com/design/DADC1v67Pvc/view" height="100%" width="100%">
+<div class="canva-embed" data-height-ratio="0.5556" data-design-id="DADC2mZScTI" style="padding:55.559999999999995% 5px 5px 5px;background:rgba(0,0,0,0.03);border-radius:8px;"></div><script async src="https://sdk.canva.com/v1/embed.js"></script><a href="https://www.canva.com/design/DADC2mZScTI/view?utm_content=DADC2mZScTI&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank">ELISA_work_flow</a> by <a href="https://www.canva.com/robomex2020?utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank">Mexson Fernandes (RoboMex)</a>
 
 
 ###### ``Resources``
