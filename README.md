@@ -10,6 +10,10 @@
   2) <a href="docs/readme.md">Documentation</a>
   3) <a href="Datasets/">Dataset</a>
 
+# ``Work Flow Diagram``
+  <img src="https://www.canva.com/design/DADC1v67Pvc/view" height="100%" width="100%">
+
+
 ###### ``Resources``
 - https://github.com/fake-news-detector
 - https://medium.com/@Genyunus/detecting-fake-news-with-nlp-c893ec31dee8
