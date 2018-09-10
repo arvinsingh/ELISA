@@ -7,7 +7,8 @@
   
 # ``Table of Content``
   1) <a href="docs/DPF.md">Draft Proposal Form</a>
-  2) <a href="docs/background.md">Background</a>
+  2) <a href="docs/readme.md">Documentation</a>
+  3) <a href="Datasets/">Dataset</a>
 
 ###### ``Resources``
 - https://github.com/fake-news-detector
