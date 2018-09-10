@@ -44,3 +44,16 @@
   - https://www.nbcnews.com/politics/2016-election/nbcnews-launches-nbc-politics-bot-facebook-messenger-n663821
 - PDCA Cycle
   - https://dzone.com/articles/qa-for-machine-learning-models-with-the-pdca-cycle
+- Dataset
+  - https://github.com/KaiDMML/FakeNewsNet
+  - https://github.com/genyunus/Detecting_Fake_News
+  - https://github.com/clips/news-audit
+  - https://github.com/marktron/fakenews/blob/master/fakenews
+  - https://github.com/FakeNewsChallenge/fnc-1
+  - https://github.com/several27/FakeNewsCorpus
+  - https://github.com/nguyenvo09/fake_news_detection_deep_learning/tree/master/train_test_data
+  - https://www.kaggle.com/arminehn/rumor-citation/data#
+  - https://github.com/BenjaminDHorne/fakenewsdata1
+  - https://github.com/GeorgeMcIntire/fake_real_news_dataset
+  - https://github.com/PaytmBuildForIndia/FakeNews
+  - https://github.com/fake-news-detector/scrappers/tree/master/scrappers
