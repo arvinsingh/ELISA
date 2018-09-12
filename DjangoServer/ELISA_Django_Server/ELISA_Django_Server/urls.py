@@ -21,5 +21,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
     path('settings/', views.settings),
-    path('dataset/', views.dataset),
 ]

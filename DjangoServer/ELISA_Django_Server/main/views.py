@@ -17,7 +17,3 @@ def settings(request):
     data = Settings.objects.get(id="default")
     return render(request, "settings.html", {'hadoop_url': data.hadoop_url})
 
-
-def dataset(request):
-    data = Settings.objects.get(id="default")
-    return render(request, "dataset.html", {'hadoop_url': data.hadoop_url})
