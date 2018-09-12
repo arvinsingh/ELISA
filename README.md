@@ -1,3 +1,5 @@
+[![OpenSources Data](https://img.shields.io/badge/Data-OpenSources-blue.svg)](http://opensources.co)
+
 # ``ELISA`` (Exploratory Liable Information Scanning of Articles) - The AI for Fake News Detection
 
 # ``Team``
@@ -11,7 +13,7 @@
   3) <a href="Datasets/">Dataset</a>
 
 # ``Work Flow Diagram``
-<div class="canva-embed" data-height-ratio="0.5556" data-design-id="DADC2mZScTI" style="padding:55.559999999999995% 5px 5px 5px;background:rgba(0,0,0,0.03);border-radius:8px;"></div><script async src="https://sdk.canva.com/v1/embed.js"></script><a href="https://www.canva.com/design/DADC2mZScTI/view?utm_content=DADC2mZScTI&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank">ELISA_work_flow</a> by <a href="https://www.canva.com/robomex2020?utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank">Mexson Fernandes (RoboMex)</a>
+<a href="https://www.canva.com/design/DADC2mZScTI/view?utm_content=DADC2mZScTI&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank">ELISA_work_flow</a> by <a href="https://www.canva.com/robomex2020?utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank">Mexson Fernandes (RoboMex)</a>
 
 # ``Run project``
 ## Run Django server
