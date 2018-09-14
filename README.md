@@ -17,7 +17,7 @@
       - <a href="">Hadoop Ecosystem (Database)</a>
 
 # ``Work Flow Diagram``
-<a href="https://www.canva.com/design/DADC2mZScTI/view?utm_content=DADC2mZScTI&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank">ELISA_work_flow</a> by <a href="https://www.canva.com/robomex2020?utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank">Mexson Fernandes (RoboMex)</a>
+<img src="https://cacoo.com/diagrams/i7dBTNKBsf85qZQ4-75FF8.png" height="500px" width="640px"/>
 
 # ``Run project``
 ## Run Django server
