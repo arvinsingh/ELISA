@@ -26,18 +26,14 @@
   3) run "cd ELISA_Django_Server"
   4) run "pip3 install -r requirements.txt"
   5) run "python3 manage.py runserver"
-## Run Webhook Relay
-  1) curl -sSL https://storage.googleapis.com/webhookrelay/downloads/relay-linux-amd64 > relay && chmod +wx relay && sudo mv relay /usr/local/bin
-  2) relay login -k 7d0abb86-c996-42b5-9b27-90c87b825c7f -s 9EOkI13hcd5K
-  3) relay connect localhost:port
   
 # ``Requirements``
 - Python 3.6
 - Django 2.0
-- Hadoop 3.1
+- Hadoop 3.0
 - Java 8
 
-###### ``Resources``
+###### ``References``
 - https://github.com/fake-news-detector
 - https://medium.com/@Genyunus/detecting-fake-news-with-nlp-c893ec31dee8
 - https://thetrustproject.org/
