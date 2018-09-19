@@ -17,7 +17,7 @@
       - <a href="">Hadoop Ecosystem (Database)</a>
 
 # ``Work Flow Diagram``
-<img src=https://go.gliffy.com/go/share/image/sefi7eidb36b5qqafxcb.png?utm_medium=live-embed&utm_source=custom" height="480px" width="640px"/>
+<img src="https://go.gliffy.com/go/share/image/sefi7eidb36b5qqafxcb.png?utm_medium=live-embed&utm_source=custom" height="480px" width="640px"/>
 
 # ``Run project``
 ## Run Django server
