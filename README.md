@@ -17,7 +17,7 @@
       - <a href="">Hadoop Ecosystem (Database)</a>
 
 # ``Work Flow Diagram``
-<iframe src="https://cacoo.com/diagrams/i7dBTNKBsf85qZQ4/view?si=75FF8&w=400&h=300" width="480px" height="640px" frameborder="0" scrolling="no"></iframe>
+<img src="https://go.gliffy.com/go/share/image/sefi7eidb36b5qqafxcb.png?utm_medium=live-embed&utm_source=custom" height="480px" width="640px"/>
 
 # ``Run project``
 ## Run Django server
