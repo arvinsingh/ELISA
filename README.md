@@ -14,14 +14,16 @@
   4) Services<br/>
       - <a href="DjangoServer/">Django App</a>
       - <a href="Chatbot/">Chatbot (DialogFlow)</a>
-      - <a href="">Hadoop Ecosystem (Database)</a>
+      - <a href="Datasets/">Hadoop Ecosystem (Database)</a>
+      - <a href="">Decentralized News Application</a>
+      - <a href="">Fake News Generator</a>
 
-# ``Work Flow Diagram``
+# ``Project Modules``
 <img src="https://go.gliffy.com/go/share/image/sefi7eidb36b5qqafxcb.png?utm_medium=live-embed&utm_source=custom" height="480px" width="640px"/>
 
 # ``Run project``
 ## Run Django server
-  1) open "ELISA/DjangoServer/" directory
+  1) go to "ELISA/DjangoServer/" directory
   2) run "source venv/bin/activate"
   3) run "cd ELISA_Django_Server"
   4) run "pip3 install -r requirements.txt"
