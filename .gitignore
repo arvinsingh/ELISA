@@ -1,3 +1,7 @@
+# Datasets -- because they are big and keep changing #
+######################################################
+/Datasets/
+
 # Compiled source #
 ###################
 *.com
