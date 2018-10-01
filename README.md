@@ -1,6 +1,6 @@
 [![OpenSources Data](https://img.shields.io/badge/Data-OpenSources-blue.svg)](http://opensources.co)
 
-# ``ELISA`` (Exploratory Liable Information Scanning of Articles) - The AI for Fake News Detection
+# ``ELISA`` (Exploratory Liable Information Scanning in Articles) - The AI for Fake News Detection
 
 # ``Team``
   1) Arvinder Pal Singh Bali (8615130)
