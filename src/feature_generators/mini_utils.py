@@ -1,39 +1,15 @@
 import os
-import itertools as it
-import functools as ft
-import functools
-import operator as op
+from functools import lru_cache
 
-try:
-    from functools import lru_cache
-except:
-    from repoze.lru import lru_cache
+import pickle
 
-try:
-    import cPickle as pickle
-except:
-    import pickle
-
-import numpy as np
-import csv
-import gensim
-import pandas as pd
 import nltk
-from nltk.corpus import wordnet as wn
 from nltk.stem.porter import PorterStemmer
-from sklearn.cross_validation import cross_val_score
-
-from cross_validate import ClaimKFold
-
 
 _max_ppdb_score = 10.0
 _min_ppdb_score = -_max_ppdb_score
 
-
-@lru_cache(maxsize=1)
-def get_dataset(filename='url-versions-2015-06-14-clean.csv'):
-    folder = os.path.join(_data_folder, 'emergent')
-    return pd.DataFrame.from_csv(os.path.join(folder, filename))
+_data_folder = os.path.join(os.path.dirname(__file__), '..', 'saved_data')
 
 _wnl = nltk.WordNetLemmatizer()
 
@@ -47,7 +23,7 @@ def get_tokenized_lemmas(s):
 
 @lru_cache(maxsize=1)
 def get_ppdb_data():
-    with open(os.path.join(_pickled_data_folder, 'ppdb.pickle'), 'rb') as f:
+    with open(os.path.join(_data_folder, 'ppdb.pickle'), 'rb') as f:
         return pickle.load(f)
 
 
@@ -62,7 +38,8 @@ def get_stem(w):
 @lru_cache(maxsize=100000)
 def compute_paraphrase_score(s, t):
     """Return numerical estimate of whether t is a paraphrase of s, up to
-    stemming of s and t."""
+        stemming of s and t.
+    """
     s_stem = get_stem(s)
     t_stem = get_stem(t)
 

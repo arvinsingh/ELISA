@@ -1,25 +1,22 @@
-import os
-
-import pickle
-
 import numpy as np
 import pandas as pd
 
 from munkres import Munkres, make_cost_matrix
 
-from mini_utils import get_tokenized_lemmas, compute_paraphrase_score, _max_ppdb_score, get_dataset
+from mini_utils import get_tokenized_lemmas, compute_paraphrase_score, _max_ppdb_score
 
 
 _munk = Munkres()
 
 
-def calc_hungarian_alignment_score(s, t):
+def calc_hungarian_alignment_score(s, t, n):
     """Calculate the alignment score between the two texts s and t
     using the implementation of the Hungarian alignment algorithm
-    provided in https://pypi.python.org/pypi/munkres/."""
+    provided in https://pypi.python.org/pypi/munkres/.
+    """
     s_toks = get_tokenized_lemmas(s)
     t_toks = get_tokenized_lemmas(t)
-
+    print("{} name".format(n))
     df = pd.DataFrame(index=s_toks, columns=t_toks, data=0.)
 
     for c in s_toks:
@@ -35,15 +32,3 @@ def calc_hungarian_alignment_score(s, t):
         value = matrix[row][column]
         total += value
     return indexes, total / float(np.min(matrix.shape))
-
-
-if __name__ == "__main__":
-    df = get_dataset()
-    data = {}
-
-    for _, row in df.iterrows():
-        data[(row.claimId, row.articleId)] = calc_hungarian_alignment_score(row.claimHeadline,
-                                                                            row.articleHeadline)
-
-    with open(os.path.join('..', 'data', 'pickled', 'hungarian-alignment-score.pickle'), 'wb') as f:
-        pickle.dump(data, f, pickle.HIGHEST_PROTOCOL)

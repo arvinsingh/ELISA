@@ -1,6 +1,7 @@
 # Datasets -- because they are big and keep changing #
 ######################################################
 /Datasets/
+/src/saved_data/
 
 # Compiled source #
 ###################
