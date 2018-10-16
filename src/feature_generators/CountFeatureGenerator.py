@@ -25,14 +25,14 @@ class CountFeatureGenerator(FeatureGenerator):
                 df["count_of_unique_%s_%s" % (feat_name, gram)] = \
 		            list(df.apply(lambda x: len(set(x[feat_name + "_" + gram])), axis=1))
                 df["ratio_of_unique_%s_%s" % (feat_name, gram)] = \
-                    map(try_divide, df["count_of_unique_%s_%s"%(feat_name,gram)], df["count_of_%s_%s"%(feat_name,gram)])
+                    list(map(try_divide, df["count_of_unique_%s_%s"%(feat_name,gram)], df["count_of_%s_%s"%(feat_name,gram)]))
 
         # overlapping n-grams count
         for gram in grams:
             df["count_of_Headline_%s_in_articleBody" % gram] = \
                 list(df.apply(lambda x: sum([1. for w in x["Headline_" + gram] if w in set(x["articleBody_" + gram])]), axis=1))
             df["ratio_of_Headline_%s_in_articleBody" % gram] = \
-                map(try_divide, df["count_of_Headline_%s_in_articleBody" % gram], df["count_of_Headline_%s" % gram])
+                list(map(try_divide, df["count_of_Headline_%s_in_articleBody" % gram], df["count_of_Headline_%s" % gram]))
         
         # number of sentences in headline and body
         for feat_name in feat_names:
@@ -116,7 +116,7 @@ class CountFeatureGenerator(FeatureGenerator):
         print (train[['Headline_unigram','Body ID', 'count_of_Headline_unigram']])
         xBasicCountsTrain = train[feat_names].values
         outfilename_bcf_train = "train.basic.pkl"
-        with open("saved_data/" + outfilename_bcf_train, "wb") as outfile:
+        with open("../saved_data/" + outfilename_bcf_train, "wb") as outfile:
             pickle.dump(feat_names, outfile, -1)
             pickle.dump(xBasicCountsTrain, outfile, -1)
         print ('basic counting features for training saved in %s' % outfilename_bcf_train)
@@ -130,7 +130,7 @@ class CountFeatureGenerator(FeatureGenerator):
             print ('saving test set')
             xBasicCountsTest = test[feat_names].values
             outfilename_bcf_test = "test.basic.pkl"
-            with open("saved_data/" + outfilename_bcf_test, 'wb') as outfile:
+            with open("../saved_data/" + outfilename_bcf_test, 'wb') as outfile:
                 pickle.dump(feat_names, outfile, -1)
                 pickle.dump(xBasicCountsTest, outfile, -1)
                 print ('basic counting features for test saved in %s' % outfilename_bcf_test)
@@ -141,7 +141,7 @@ class CountFeatureGenerator(FeatureGenerator):
     def read(self, header='train'):
 
         filename_bcf = "%s.basic.pkl" % header
-        with open("saved_data/" + filename_bcf, "rb") as infile:
+        with open("../saved_data/" + filename_bcf, "rb") as infile:
             feat_names = pickle.load(infile)
             xBasicCounts = pickle.load(infile)
             print ('feature names: ')

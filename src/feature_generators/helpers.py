@@ -19,7 +19,7 @@ def preprocess_data(line,
                     token_pattern=token_pattern,
                     exclude_stopword=True,
                     stem=True):
-    token_pattern = re.compile(token_pattern, flags = re.UNICODE | re.LOCALE)
+    token_pattern = re.compile(token_pattern, flags = re.UNICODE)
     tokens = [x.lower() for x in token_pattern.findall(line)]
     tokens_stemmed = tokens
     if stem:

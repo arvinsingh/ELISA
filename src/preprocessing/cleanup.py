@@ -77,7 +77,7 @@ def best_practice_load_with_pandas(filename):
 
 
 if __name__ == '__main__':
-    open_process_rewrite('datasets/test_bodies.csv')
-    open_process_rewrite('datasets/test_stances_unlabeled.csv')
-    open_process_rewrite('datasets/train_bodies.csv')
-    open_process_rewrite('datasets/train_stances.csv')
+    open_process_rewrite('../datasets/test_bodies.csv')
+    open_process_rewrite('../datasets/test_stances_unlabeled.csv')
+    open_process_rewrite('../datasets/train_bodies.csv')
+    open_process_rewrite('../datasets/train_stances.csv')

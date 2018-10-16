@@ -18,7 +18,7 @@ class TargetFeatureGenerator(FeatureGenerator):
 
         targets = df['target'].values
         outfilename_target = "%s.target.pkl" % header
-        with open("saved_data/" + outfilename_target, "wb") as outfile:
+        with open("../saved_data/" + outfilename_target, "wb") as outfile:
             pickle.dump(targets, outfile, -1)
         print ('targets saved in %s' % outfilename_target)
         
@@ -28,7 +28,7 @@ class TargetFeatureGenerator(FeatureGenerator):
     def read(self, header='train'):
 
         filename_target = "%s.target.pkl" % header
-        with open("saved_data/" + filename_target, "rb") as infile:
+        with open("../saved_data/" + filename_target, "rb") as infile:
             target = pickle.load(infile)
             print ('target.shape:')
             print (target.shape)

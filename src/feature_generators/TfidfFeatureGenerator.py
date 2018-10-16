@@ -39,7 +39,7 @@ class TfidfFeatureGenerator(FeatureGenerator):
         # save train and test into separate files
         xHeadlineTfidfTrain = xHeadlineTfidf[:n_train, :]
         outfilename_htfidf_train = "train.headline.tfidf.pkl"
-        with open("saved_data/" + outfilename_htfidf_train, "wb") as outfile:
+        with open("../saved_data/" + outfilename_htfidf_train, "wb") as outfile:
             pickle.dump(xHeadlineTfidfTrain, outfile, -1)
         print ('headline tfidf features of training set saved in %s' % outfilename_htfidf_train)
         
@@ -47,7 +47,7 @@ class TfidfFeatureGenerator(FeatureGenerator):
             # test set is available
             xHeadlineTfidfTest = xHeadlineTfidf[n_train:, :]
             outfilename_htfidf_test = "test.headline.tfidf.pkl"
-            with open("saved_data/" + outfilename_htfidf_test, "wb") as outfile:
+            with open("../saved_data/" + outfilename_htfidf_test, "wb") as outfile:
                 pickle.dump(xHeadlineTfidfTest, outfile, -1)
             print ('headline tfidf features of test set saved in %s' % outfilename_htfidf_test)
 
@@ -60,7 +60,7 @@ class TfidfFeatureGenerator(FeatureGenerator):
         # save train and test into separate files
         xBodyTfidfTrain = xBodyTfidf[:n_train, :]
         outfilename_btfidf_train = "train.body.tfidf.pkl"
-        with open("saved_data/" + outfilename_btfidf_train, "wb") as outfile:
+        with open("../saved_data/" + outfilename_btfidf_train, "wb") as outfile:
             pickle.dump(xBodyTfidfTrain, outfile, -1)
         print ('body tfidf features of training set saved in %s' % outfilename_btfidf_train)
         
@@ -68,18 +68,18 @@ class TfidfFeatureGenerator(FeatureGenerator):
             # test set is availble
             xBodyTfidfTest = xBodyTfidf[n_train:, :]
             outfilename_btfidf_test = "test.body.tfidf.pkl"
-            with open("saved_data/" + outfilename_btfidf_test, "wb") as outfile:
+            with open("../saved_data/" + outfilename_btfidf_test, "wb") as outfile:
                 pickle.dump(xBodyTfidfTest, outfile, -1)
             print ('body tfidf features of test set saved in %s' % outfilename_btfidf_test)
                
 
         # 4). compute cosine similarity between headline tfidf features and body tfidf features
-        simTfidf = np.asarray(map(cosine_sim, xHeadlineTfidf, xBodyTfidf))[:, np.newaxis]
+        simTfidf = np.asarray(list(map(cosine_sim, xHeadlineTfidf, xBodyTfidf)))[:, np.newaxis]
         print ('simTfidf.shape:')
         print (simTfidf.shape)
         simTfidfTrain = simTfidf[:n_train]
         outfilename_simtfidf_train = "train.sim.tfidf.pkl"
-        with open("saved_data/" + outfilename_simtfidf_train, "wb") as outfile:
+        with open("../saved_data/" + outfilename_simtfidf_train, "wb") as outfile:
             pickle.dump(simTfidfTrain, outfile, -1)
         print ('tfidf sim. features of training set saved in %s' % outfilename_simtfidf_train)
         
@@ -87,7 +87,7 @@ class TfidfFeatureGenerator(FeatureGenerator):
             # test set is available
             simTfidfTest = simTfidf[n_train:]
             outfilename_simtfidf_test = "test.sim.tfidf.pkl"
-            with open("saved_data/" + outfilename_simtfidf_test, "wb") as outfile:
+            with open("../saved_data/" + outfilename_simtfidf_test, "wb") as outfile:
                 pickle.dump(simTfidfTest, outfile, -1)
             print ('tfidf sim. features of test set saved in %s' % outfilename_simtfidf_test)
 
@@ -97,15 +97,15 @@ class TfidfFeatureGenerator(FeatureGenerator):
     def read(self, header='train'):
 
         filename_htfidf = "%s.headline.tfidf.pkl" % header
-        with open("saved_data/" + filename_htfidf, "rb") as infile:
+        with open("../saved_data/" + filename_htfidf, "rb") as infile:
             xHeadlineTfidf = pickle.load(infile)
 
         filename_btfidf = "%s.body.tfidf.pkl" % header
-        with open("saved_data/" + filename_btfidf, "rb") as infile:
+        with open("../saved_data/" + filename_btfidf, "rb") as infile:
             xBodyTfidf = pickle.load(infile)
 
         filename_simtfidf = "%s.sim.tfidf.pkl" % header
-        with open("saved_data/" + filename_simtfidf, "rb") as infile:
+        with open("../saved_data/" + filename_simtfidf, "rb") as infile:
             simTfidf = pickle.load(infile)
 
         print ('xHeadlineTfidf.shape:')

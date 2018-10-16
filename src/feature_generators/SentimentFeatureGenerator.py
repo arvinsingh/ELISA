@@ -45,7 +45,7 @@ class SentimentFeatureGenerator(FeatureGenerator):
         
         headlineSentiTrain = headlineSenti[:n_train, :]
         outfilename_hsenti_train = "train.headline.senti.pkl"
-        with open("saved_data/" + outfilename_hsenti_train, "wb") as outfile:
+        with open("../saved_data/" + outfilename_hsenti_train, "wb") as outfile:
             pickle.dump(headlineSentiTrain, outfile, -1)
         print ('headline sentiment features of training set saved in %s' % outfilename_hsenti_train)
         
@@ -53,7 +53,7 @@ class SentimentFeatureGenerator(FeatureGenerator):
             # test set is available
             headlineSentiTest = headlineSenti[n_train:, :]
             outfilename_hsenti_test = "test.headline.senti.pkl"
-            with open("saved_data/" + outfilename_hsenti_test, "wb") as outfile:
+            with open("../saved_data/" + outfilename_hsenti_test, "wb") as outfile:
                 pickle.dump(headlineSentiTest, outfile, -1)
             print ('headline sentiment features of test set saved in %s' % outfilename_hsenti_test)
         
@@ -75,7 +75,7 @@ class SentimentFeatureGenerator(FeatureGenerator):
         
         bodySentiTrain = bodySenti[:n_train, :]
         outfilename_bsenti_train = "train.body.senti.pkl"
-        with open("saved_data/" + outfilename_bsenti_train, "wb") as outfile:
+        with open("../saved_data/" + outfilename_bsenti_train, "wb") as outfile:
             pickle.dump(bodySentiTrain, outfile, -1)
         print ('body sentiment features of training set saved in %s' % outfilename_bsenti_train)
         
@@ -83,7 +83,7 @@ class SentimentFeatureGenerator(FeatureGenerator):
             # test set is available
             bodySentiTest = bodySenti[n_train:, :]
             outfilename_bsenti_test = "test.body.senti.pkl"
-            with open("saved_data/" + outfilename_bsenti_test, "wb") as outfile:
+            with open("../saved_data/" + outfilename_bsenti_test, "wb") as outfile:
                 pickle.dump(bodySentiTest, outfile, -1)
             print ('body sentiment features of test set saved in %s' % outfilename_bsenti_test)
 
@@ -95,11 +95,11 @@ class SentimentFeatureGenerator(FeatureGenerator):
     def read(self, header='train'):
 
         filename_hsenti = "%s.headline.senti.pkl" % header
-        with open("saved_data/" + filename_hsenti, "rb") as infile:
+        with open("../saved_data/" + filename_hsenti, "rb") as infile:
             headlineSenti = pickle.load(infile)
 
         filename_bsenti = "%s.body.senti.pkl" % header
-        with open("saved_data/" + filename_bsenti, "rb") as infile:
+        with open("../saved_data/" + filename_bsenti, "rb") as infile:
             bodySenti = pickle.load(infile)
 
         print ('headlineSenti.shape:')

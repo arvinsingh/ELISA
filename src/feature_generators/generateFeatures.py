@@ -15,13 +15,13 @@ def process():
     read = False
     if not read:
     
-        body_train = pd.read_csv("datasets/train_bodies_processed.csv", encoding='utf-8')
-        stances_train = pd.read_csv("datasets/train_stances_processed.csv", encoding='utf-8')
+        body_train = pd.read_csv("../datasets/train_bodies_processed.csv", encoding='utf-8')
+        stances_train = pd.read_csv("../datasets/train_stances_processed.csv", encoding='utf-8')
         # training set
         train = pd.merge(stances_train, body_train, how='left', on='Body ID')
         targets = ['agree', 'disagree', 'discuss', 'unrelated']
         targets_dict = dict(zip(targets, range(len(targets))))
-        train['target'] = map(lambda x: targets_dict[x], train['Stance'])
+        train['target'] = list(map(lambda x: targets_dict[x], train['Stance']))
         print ('train.shape:')
         print (train.shape)
         n_train = train.shape[0]
@@ -31,11 +31,11 @@ def process():
         # concatenate training and test set
         test_flag = True
         if test_flag:
-            body_test = pd.read_csv("datasets/test_bodies_processed.csv", encoding='utf-8')
-            headline_test = pd.read_csv("datasets/test_stances_unlabeled.csv", encoding='utf-8')
+            body_test = pd.read_csv("../datasets/test_bodies_processed.csv", encoding='utf-8')
+            headline_test = pd.read_csv("../datasets/test_stances_unlabeled.csv", encoding='utf-8')
             test = pd.merge(headline_test, body_test, how="left", on="Body ID")
             
-            data = pd.concat((train, test)) # target = NaN for test set
+            data = pd.concat((train, test), sort=False) # target = NaN for test set
             print (data)
             print ('data.shape:')
             print (data.shape)

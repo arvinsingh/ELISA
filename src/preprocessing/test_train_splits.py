@@ -99,8 +99,8 @@ stance = 'Stance'
 headline = 'Headline'
 body = 'articleBody'
 
-stances = pd.read_csv('datasets/train_stances.csv', encoding='utf-8')
-bodies = pd.read_csv('datasets/train_bodies.csv', encoding='utf-8')
+stances = pd.read_csv('../datasets/train_stances.csv', encoding='utf-8')
+bodies = pd.read_csv('../datasets/train_bodies.csv', encoding='utf-8')
 
 df = stances.merge(bodies,on='Body ID')
 
@@ -130,16 +130,16 @@ if run_headline_body_split:
         df_test_b_indx  = [ True if k in test_b.values else False for k in df_related[body_id] ]
         df_train_b_indx = [ True if not a else False for a in df_test_b_indx ]
 
-        df_related[df_test_h_indx].to_csv( 'datasets/test_h_{}.csv'.format( ii ), index=False, encoding='utf-8' )
-        df_related[df_train_h_indx].to_csv( 'datasets/train_h_{}.csv'.format( ii ), index=False, encoding='utf-8' )
+        df_related[df_test_h_indx].to_csv( '../datasets/test_h_{}.csv'.format( ii ), index=False, encoding='utf-8' )
+        df_related[df_train_h_indx].to_csv( '../datasets/train_h_{}.csv'.format( ii ), index=False, encoding='utf-8' )
 
-        df_related[df_test_b_indx].to_csv( 'datasets/test_b_{}.csv'.format( ii ), index=False, encoding='utf-8' )
-        df_related[df_train_b_indx].to_csv( 'datasets/train_b_{}.csv'.format( ii ), index=False, encoding='utf-8' )
+        df_related[df_test_b_indx].to_csv( '../datasets/test_b_{}.csv'.format( ii ), index=False, encoding='utf-8' )
+        df_related[df_train_b_indx].to_csv( '../datasets/train_b_{}.csv'.format( ii ), index=False, encoding='utf-8' )
 
 if run_no_overlap_split:
     for ii in range( 0, 5 ):
         (df_test, df_train ) = break_it( df_related, .2 )
 
         # labeled d for disjoint
-        df_test.to_csv( 'datasets/test_d_{}.csv'.format( ii ), index=False, encoding='utf-8' )
-        df_train.to_csv( 'datasets/train_d_{}.csv'.format( ii ), index=False, encoding='utf-8' )
+        df_test.to_csv( '../datasets/test_d_{}.csv'.format( ii ), index=False, encoding='utf-8' )
+        df_train.to_csv( '../datasets/train_d_{}.csv'.format( ii ), index=False, encoding='utf-8' )

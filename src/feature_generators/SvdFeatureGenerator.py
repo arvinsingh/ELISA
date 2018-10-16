@@ -46,7 +46,7 @@ class SvdFeatureGenerator(FeatureGenerator):
         
         xHeadlineSvdTrain = xHeadlineSvd[:n_train, :]
         outfilename_hsvd_train = "train.headline.svd.pkl"
-        with open("saved_data/" + outfilename_hsvd_train, "wb") as outfile:
+        with open("../saved_data/" + outfilename_hsvd_train, "wb") as outfile:
             pickle.dump(xHeadlineSvdTrain, outfile, -1)
         print ('headline svd features of training set saved in %s' % outfilename_hsvd_train)
         
@@ -54,7 +54,7 @@ class SvdFeatureGenerator(FeatureGenerator):
             # test set is available
             xHeadlineSvdTest = xHeadlineSvd[n_train:, :]
             outfilename_hsvd_test = "test.headline.svd.pkl"
-            with open("saved_data/" + outfilename_hsvd_test, "wb") as outfile:
+            with open("../saved_data/" + outfilename_hsvd_test, "wb") as outfile:
                 pickle.dump(xHeadlineSvdTest, outfile, -1)
             print ('headline svd features of test set saved in %s' % outfilename_hsvd_test)
 
@@ -64,7 +64,7 @@ class SvdFeatureGenerator(FeatureGenerator):
         
         xBodySvdTrain = xBodySvd[:n_train, :]
         outfilename_bsvd_train = "train.body.svd.pkl"
-        with open("saved_data/" + outfilename_bsvd_train, "wb") as outfile:
+        with open("../saved_data/" + outfilename_bsvd_train, "wb") as outfile:
             pickle.dump(xBodySvdTrain, outfile, -1)
         print ('body svd features of training set saved in %s' % outfilename_bsvd_train)
         
@@ -72,17 +72,17 @@ class SvdFeatureGenerator(FeatureGenerator):
             # test set is available
             xBodySvdTest = xBodySvd[n_train:, :]
             outfilename_bsvd_test = "test.body.svd.pkl"
-            with open("saved_data/" + outfilename_bsvd_test, "wb") as outfile:
+            with open("../saved_data/" + outfilename_bsvd_test, "wb") as outfile:
                 pickle.dump(xBodySvdTest, outfile, -1)
             print ('body svd features of test set saved in %s' % outfilename_bsvd_test)
 
-        simSvd = np.asarray(map(cosine_sim, xHeadlineSvd, xBodySvd))[:, np.newaxis]
+        simSvd = np.asarray(list(map(cosine_sim, xHeadlineSvd, xBodySvd)))[:, np.newaxis]
         print ('simSvd.shape:')
         print (simSvd.shape)
 
         simSvdTrain = simSvd[:n_train]
         outfilename_simsvd_train = "train.sim.svd.pkl"
-        with open("saved_data/" + outfilename_simsvd_train, "wb") as outfile:
+        with open("../saved_data/" + outfilename_simsvd_train, "wb") as outfile:
             pickle.dump(simSvdTrain, outfile, -1)
         print ('svd sim. features of training set saved in %s' % outfilename_simsvd_train)
         
@@ -90,7 +90,7 @@ class SvdFeatureGenerator(FeatureGenerator):
             # test set is available
             simSvdTest = simSvd[n_train:]
             outfilename_simsvd_test = "test.sim.svd.pkl"
-            with open("saved_data/" + outfilename_simsvd_test, "wb") as outfile:
+            with open("../saved_data/" + outfilename_simsvd_test, "wb") as outfile:
                 pickle.dump(simSvdTest, outfile, -1)
             print ('svd sim. features of test set saved in %s' % outfilename_simsvd_test)
 
@@ -100,15 +100,15 @@ class SvdFeatureGenerator(FeatureGenerator):
     def read(self, header='train'):
 
         filename_hsvd = "%s.headline.svd.pkl" % header
-        with open("saved_data/" + filename_hsvd, "rb") as infile:
+        with open("../saved_data/" + filename_hsvd, "rb") as infile:
             xHeadlineSvd = pickle.load(infile)
 
         filename_bsvd = "%s.body.svd.pkl" % header
-        with open("saved_data/" + filename_bsvd, "rb") as infile:
+        with open("../saved_data/" + filename_bsvd, "rb") as infile:
             xBodySvd = pickle.load(infile)
 
         filename_simsvd = "%s.sim.svd.pkl" % header
-        with open("saved_data/" + filename_simsvd, "rb") as infile:
+        with open("../saved_data/" + filename_simsvd, "rb") as infile:
             simSvd = pickle.load(infile)
 
         print ('xHeadlineSvd.shape:')

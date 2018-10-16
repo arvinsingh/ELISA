@@ -12,7 +12,6 @@ from feature_generators.SvdFeatureGenerator import *
 from feature_generators.Word2VecFeatureGenerator import *
 from feature_generators.SentimentFeatureGenerator import *
 from feature_generators.AlignmentFeatureGenerator import *
-from score import *
 '''
     10-fold cv on 80% of the data (training_ids.txt)
     splitting based on BodyID
@@ -37,12 +36,12 @@ num_round = 1000
 def build_data():
     
     # create target variable
-    body = pd.read_csv("datasets/train_bodies.csv")
-    stances = pd.read_csv("datasets/train_stances.csv")
+    body = pd.read_csv("../datasets/train_bodies.csv")
+    stances = pd.read_csv("../datasets/train_stances.csv")
     data = pd.merge(stances, body, how='left', on='Body ID')
     targets = ['agree', 'disagree', 'discuss', 'unrelated']
     targets_dict = dict(zip(targets, range(len(targets))))
-    data['target'] = map(lambda x: targets_dict[x], data['Stance'])
+    data['target'] = list(map(lambda x: targets_dict[x], data['Stance']))
     
     data_y = data['target'].values
 
@@ -67,7 +66,7 @@ def build_data():
     print ('body_ids.shape')
     print (data['Body ID'].values.shape)
     
-    #with open('save_data/ + 'data_new.pkl', 'wb') as outfile:
+    #with open('../save_data/ + 'data_new.pkl', 'wb') as outfile:
     #    pickle.dump(data_x, outfile, -1)
     #    print 'data saved in data_new.pkl'
 
@@ -78,8 +77,8 @@ def build_test_data():
     
     # create target variable
     # replace file names when test data is ready
-    body = pd.read_csv("datasets/test_bodies.csv")
-    stances = pd.read_csv("datasets/test_stances_unlabeled.csv") # needs to contain pair id
+    body = pd.read_csv("../datasets/test_bodies.csv")
+    stances = pd.read_csv("../datasets/test_stances_unlabeled.csv") # needs to contain pair id
     data = pd.merge(stances, body, how='left', on='Body ID')
     
     # read features
@@ -177,7 +176,7 @@ def train():
     #print predicted
 
     # save (id, predicted and probabilities) to csv, for model averaging
-    stances = pd.read_csv("datasets/test_stances_unlabeled_processed.csv") # same row order as predicted
+    stances = pd.read_csv("../datasets/test_stances_unlabeled_processed.csv") # same row order as predicted
     
     df_output = pd.DataFrame()
     df_output['Headline'] = stances['Headline']
@@ -187,9 +186,9 @@ def train():
     df_output['prob_1'] = pred_prob_y[:, 1]
     df_output['prob_2'] = pred_prob_y[:, 2]
     df_output['prob_3'] = pred_prob_y[:, 3]
-    #df_output.to_csv('results/submission.csv', index=False)
-    df_output.to_csv('results/tree_pred_prob_cor2.csv', index=False)
-    df_output[['Headline','Body ID','Stance']].to_csv('results/tree_pred_cor2.csv', index=False)
+    #df_output.to_csv('../results/submission.csv', index=False)
+    df_output.to_csv('../results/tree_pred_prob_cor2.csv', index=False)
+    df_output[['Headline','Body ID','Stance']].to_csv('../results/tree_pred_cor2.csv', index=False)
 
     print (df_output)
     print (Counter(df_output['Stance']))
@@ -214,12 +213,12 @@ def cv():
     #return 1
     
     # to obtain test dataframe for model averaging
-    body = pd.read_csv("datasets/train_bodies.csv")
-    stances = pd.read_csv("datasets/train_stances.csv")
+    body = pd.read_csv("../datasets/train_bodies.csv")
+    stances = pd.read_csv("../datasets/train_stances.csv")
     data = pd.merge(stances, body, how='left', on='Body ID')
     targets = ['agree', 'disagree', 'discuss', 'unrelated']
     targets_dict = dict(zip(targets, range(len(targets))))
-    data['target'] = map(lambda x: targets_dict[x], data['Stance'])
+    data['target'] = list(map(lambda x: targets_dict[x], data['Stance']))
     test_df = data.ix[holdout_idx]    
 
     cv_ids = set([int(x.rstrip()) for x in open('training_ids.txt')])
@@ -357,8 +356,8 @@ def cv():
     test_df['prob_2'] = pred_prob_holdout_y[:,2]
     test_df['prob_3'] = pred_prob_holdout_y[:,3]
     
-    #test_df[['Headline','Body ID', 'Stance', 'actual', 'predicted']].to_csv('predtest.csv', index=False)
-    test_df[['Headline', 'Body ID', 'Stance', 'actual', 'predicted', 'prob_0', 'prob_1', 'prob_2', 'prob_3']].to_csv('results/predtest_cor2.csv', index=False)
+    #test_df[['Headline','Body ID', 'Stance', 'actual', 'predicted']].to_csv('../results/predtest.csv', index=False)
+    test_df[['Headline', 'Body ID', 'Stance', 'actual', 'predicted', 'prob_0', 'prob_1', 'prob_2', 'prob_3']].to_csv('../results/predtest_cor2.csv', index=False)
 
     #print 'on holdout set, score = %f, perfect_score %f' % (s_test, s_test_perf)
 
@@ -366,13 +365,13 @@ def cv():
 def show_incorrect_pred(actual, predicted, idx_valid):
 
     # create target variable
-    body = pd.read_csv("train_bodies.csv")
-    stances = pd.read_csv("train_stances.csv")
+    body = pd.read_csv("../train_bodies.csv")
+    stances = pd.read_csv("../train_stances.csv")
     data = pd.merge(body, stances, how='right', on='Body ID')
 
     targets = ['agree', 'disagree', 'discuss', 'unrelated']
     targets_dict = dict(zip(targets, range(len(targets))))
-    data['target'] = map(lambda x: targets_dict[x], data['Stance'])
+    data['target'] = list(map(lambda x: targets_dict[x], data['Stance']))
     print ('before, data.shape:')
     print (data.shape)
     data = data.ix[idx_valid]
@@ -388,7 +387,7 @@ def show_incorrect_pred(actual, predicted, idx_valid):
     #print (d)
     derr = data[data['actual'] != data['predicted']]
     print (derr[['articleBody','Headline','Stance','predicted']])
-    derr.to_csv('results/incorrect.csv', columns=['Body ID','Stance','predicted','Headline','articleBody'], index=False)
+    derr.to_csv('../results/incorrect.csv', columns=['Body ID','Stance','predicted','Headline','articleBody'], index=False)
 
 if __name__ == '__main__':
     #build_test_data()

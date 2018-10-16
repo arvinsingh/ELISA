@@ -27,12 +27,12 @@ num_round = 1000
 def build_data():
     
     # create target variable
-    body = pd.read_csv("datasets/train_bodies.csv")
-    stances = pd.read_csv("datasets/train_stances.csv")
+    body = pd.read_csv("../datasets/train_bodies.csv")
+    stances = pd.read_csv("../datasets/train_stances.csv")
     data = pd.merge(body, stances, how='right', on='Body ID')
     targets = ['agree', 'disagree', 'discuss', 'unrelated']
     targets_dict = dict(zip(targets, range(len(targets))))
-    data['target'] = map(lambda x: targets_dict[x], data['Stance'])
+    data['target'] = list(map(lambda x: targets_dict[x], data['Stance']))
     
     data_y = data['target'].values
     

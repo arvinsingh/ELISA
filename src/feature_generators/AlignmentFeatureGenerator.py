@@ -55,7 +55,7 @@ class AlignmentFeatureGenerator(FeatureGenerator):
             test = df[df['target'].isnull()]
             xWalignTest = test['align_score_max'].values
             outfilename_walign_test = "test.walign.pkl"
-            with open("saved_data/" + outfilename_walign_test, "wb") as outfile:
+            with open("../saved_data/" + outfilename_walign_test, "wb") as outfile:
                 pickle.dump(xWalignTest, outfile, -1)
             print ('word alignment features for test saved in %s' % outfilename_walign_test)
 
@@ -63,7 +63,7 @@ class AlignmentFeatureGenerator(FeatureGenerator):
     def read(self, header='train'):
 
         filename_walign = "%s.walign.pkl" % header
-        with open("saved_data/" + filename_walign, "rb") as infile:
+        with open("../saved_data/" + filename_walign, "rb") as infile:
             wordAlignScore = pickle.load(infile).reshape(-1 ,1)
         
         #print wordAlignScore
