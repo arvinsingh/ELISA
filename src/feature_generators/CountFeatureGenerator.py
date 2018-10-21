@@ -1,9 +1,9 @@
-from FeatureGenerator import *
-import ngram
+from .FeatureGenerator import *
+from . import ngram
 import pickle
 import pandas as pd
 from nltk.tokenize import sent_tokenize
-from helpers import *
+from .helpers import *
 import hashlib
 
 

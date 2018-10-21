@@ -1,11 +1,11 @@
-from FeatureGenerator import *
+from .FeatureGenerator import *
 import pandas as pd
 import numpy as np
 import pickle
 import gensim
 from sklearn.preprocessing import normalize
 from functools import reduce
-from helpers import *
+from .helpers import *
 
 
 class Word2VecFeatureGenerator(FeatureGenerator):
@@ -28,7 +28,8 @@ class Word2VecFeatureGenerator(FeatureGenerator):
         
         # 1). document vector built by multiplying together all the word vectors
         # using Google's pre-trained word vectors
-        model = gensim.models.KeyedVectors.load_word2vec_format('GoogleNews-vectors-negative300.bin', binary=True)
+        # model = gensim.models.KeyedVectors.load_word2vec_format('GoogleNews-vectors-negative300.bin', binary=True)
+        model = gensim.models.KeyedVectors.load_word2vec_format('../datasets/word2vec.txt')
         print ('model loaded')
 
         Headline_unigram_array = df['Headline_unigram_vec'].values
@@ -39,7 +40,7 @@ class Word2VecFeatureGenerator(FeatureGenerator):
         
         # word vectors weighted by normalized tf-idf coefficient?
         #headlineVec = [0]
-        headlineVec = list(map(lambda x: reduce(np.add, [model[y] for y in x if y in model], [0.]*300), Headline_unigram_array))
+        headlineVec = list(map(lambda x: reduce(np.add, [model[y] for y in x if y in model], [0.]*50), Headline_unigram_array))
         headlineVec = np.array(headlineVec)
         print ('headlineVec:')
         print (headlineVec)

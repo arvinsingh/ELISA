@@ -1,7 +1,7 @@
-from FeatureGenerator import *
+from .FeatureGenerator import *
 import pickle
 import pandas as pd
-from helpers import *
+from .helpers import *
 
 
 class TargetFeatureGenerator(FeatureGenerator):

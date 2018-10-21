@@ -1,11 +1,11 @@
-from FeatureGenerator import *
-from TfidfFeatureGenerator import *
+from .FeatureGenerator import *
+from .TfidfFeatureGenerator import *
 import pandas as pd
 import numpy as np
 from scipy.sparse import vstack
 import pickle
 from sklearn.decomposition import TruncatedSVD
-from helpers import *
+from .helpers import *
 
 class SvdFeatureGenerator(FeatureGenerator):
 

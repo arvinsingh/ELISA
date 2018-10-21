@@ -1,14 +1,14 @@
-from FeatureGenerator import *
+from .FeatureGenerator import *
 import pandas as pd
 import numpy as np
 import pickle
 from nltk.tokenize import sent_tokenize
-from helpers import *
+from .helpers import *
 
 # import sys
 # sys.path.append('./mscproject/bin')
 # sys.path.append('./mscproject/src')
-from run_calc_hungarian_alignment_score import *
+from .run_calc_hungarian_alignment_score import *
 
 
 class AlignmentFeatureGenerator(FeatureGenerator):

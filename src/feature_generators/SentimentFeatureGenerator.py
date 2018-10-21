@@ -1,10 +1,10 @@
-from FeatureGenerator import *
+from .FeatureGenerator import *
 import pandas as pd
 import numpy as np
 import pickle
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk.tokenize import sent_tokenize
-from helpers import *
+from .helpers import *
 
 
 class SentimentFeatureGenerator(FeatureGenerator):

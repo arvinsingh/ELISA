@@ -6,6 +6,7 @@ from collections import Counter
 from sklearn.model_selection import StratifiedKFold, GroupKFold
 import xgboost as xgb
 from collections import Counter
+from .score import *
 from feature_generators.CountFeatureGenerator import *
 from feature_generators.TfidfFeatureGenerator import *
 from feature_generators.SvdFeatureGenerator import *

@@ -1,9 +1,9 @@
-from FeatureGenerator import *
+from .FeatureGenerator import *
 import pandas as pd
 import numpy as np
 import pickle
 from sklearn.feature_extraction.text import TfidfVectorizer
-from helpers import *
+from .helpers import *
 
 
 class TfidfFeatureGenerator(FeatureGenerator):
@@ -118,5 +118,5 @@ class TfidfFeatureGenerator(FeatureGenerator):
         print (simTfidf.shape)
         #print (type(simTfidf))
 
-        return [xHeadlineTfidf, xBodyTfidf, simTfidf.reshape(-1, 1)]
-        #return [simTfidf.reshape(-1, 1)]
+        # return [xHeadlineTfidf, xBodyTfidf, simTfidf.reshape(-1, 1)]
+        return [simTfidf.reshape(-1, 1)]

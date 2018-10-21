@@ -3,7 +3,7 @@ import pandas as pd
 
 from munkres import Munkres, make_cost_matrix
 
-from mini_utils import get_tokenized_lemmas, compute_paraphrase_score, _max_ppdb_score
+from .mini_utils import get_tokenized_lemmas, compute_paraphrase_score, _max_ppdb_score
 
 
 _munk = Munkres()
