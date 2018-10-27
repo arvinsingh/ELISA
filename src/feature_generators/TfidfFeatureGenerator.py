@@ -7,7 +7,22 @@ from .helpers import *
 
 
 class TfidfFeatureGenerator(FeatureGenerator):
-    
+    """
+    This module constructs sparse vector representations of 
+    the headline and body by calculating the Term-Frequency 
+    of each gram and normalize it by its Inverse-Document 
+    Frequency. First off a TfidfVectorizer is fit to the 
+    concatenations of headline and body text to obtain the 
+    vocabulary. Then using the same vocabulary it separately 
+    fits and transforms the headline grams and body grams into 
+    sparse vectors. It also calculates the cosine similarity 
+    between the headline vector and the body vector.
+
+    Line 141: Raw TF-IDF vectors are needed by SvdFeatureGenerator.py
+              during feature generation
+
+    Line 142: But only the similarities are needed for training.
+    """    
     
     def __init__(self, name='tfidfFeatureGenerator'):
         super(TfidfFeatureGenerator, self).__init__(name)
@@ -30,6 +45,11 @@ class TfidfFeatureGenerator(FeatureGenerator):
         vec = TfidfVectorizer(ngram_range=(1, 3), max_df=0.8, min_df=2)
         vec.fit(df["all_text"]) # Tf-idf calculated on the combined training + test set
         vocabulary = vec.vocabulary_
+
+        print("length of vocabulary: " + str(len(vocabulary)))
+        with open('vec.pkl', 'wb') as vo:
+            pickle.dump(vec, vo)
+        print("Vec saved!")
 
         vecH = TfidfVectorizer(ngram_range=(1, 3), max_df=0.8, min_df=2, vocabulary=vocabulary)
         xHeadlineTfidf = vecH.fit_transform(df['Headline_unigram'].map(lambda x: ' '.join(x))) # use ' '.join(Headline_unigram) instead of Headline since the former is already stemmed
@@ -118,5 +138,5 @@ class TfidfFeatureGenerator(FeatureGenerator):
         print (simTfidf.shape)
         #print (type(simTfidf))
 
-        # return [xHeadlineTfidf, xBodyTfidf, simTfidf.reshape(-1, 1)]
-        return [simTfidf.reshape(-1, 1)]
+        return [xHeadlineTfidf, xBodyTfidf, simTfidf.reshape(-1, 1)]
+        # return [simTfidf.reshape(-1, 1)]

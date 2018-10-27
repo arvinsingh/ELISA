@@ -8,7 +8,18 @@ from sklearn.decomposition import TruncatedSVD
 from .helpers import *
 
 class SvdFeatureGenerator(FeatureGenerator):
-
+    """
+    This module takes the TF-IDF features and applies 
+    Singular-Value Decomposition to them to obtain a 
+    compact, dense vector representation of the headline 
+    and body respectively. This procedure is well known 
+    and corresponds to finding the latent topics involved 
+    in the corpus and represent each headline/body text as 
+    a mixture of these topics. The cosine similarities between 
+    the SVD features of headline and body text are also computed. 
+    This similarity metric is very indicative of whether the 
+    body is related to the headline or not.
+    """
 
     def __init__(self, name='svdFeatureGenerator'):
         super(SvdFeatureGenerator, self).__init__(name)

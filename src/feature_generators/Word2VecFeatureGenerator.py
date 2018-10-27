@@ -9,7 +9,21 @@ from .helpers import *
 
 
 class Word2VecFeatureGenerator(FeatureGenerator):
-
+    """
+    This module utilizes the pre-trained word vectors from public 
+    sources, add them up to build vector representations of the 
+    headline and body. The word vectors were trained on a Google 
+    News corpus with 100 billion words and a vocabulary size of 
+    3 million. The resulting word vectors can be used to find 
+    synonyms, predict the next word given the previous words, 
+    or to manipulate semantics. For example, when you calculate 
+    vector(Germany) - Vector(Berlin) + Vector(England) you will 
+    obtain a vector that is very close to Vector(London). For the 
+    current problem constructing the vector representation out of 
+    word vectors could potentially overcome the ambiguities introduced 
+    by the fact that headline and body may use synonyms instead 
+    of exact words.
+    """
 
     def __init__(self, name='word2vecFeatureGenerator'):
         super(Word2VecFeatureGenerator, self).__init__(name)

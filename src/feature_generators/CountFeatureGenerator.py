@@ -8,7 +8,19 @@ import hashlib
 
 
 class CountFeatureGenerator(FeatureGenerator):
-
+    """
+    This module takes the uni-grams, bi-grams and tri-grams and
+    creates various counts and ratios which could potentially
+    signify how a body text is related to a headline. Specifically,
+    it counts how many times a gram appears in the headline, how
+    many unique grams there are in the headline, and the ratio 
+    between the two. The same statistics are computed for the body 
+    text, too. It then calculates how many grams in the headline 
+    also appear in the body text, and a normalized version of this 
+    overlapping count by the number of grams in the headline. The 
+    results are saved in the pickle file which will be read back 
+    in by the classifier.
+    """
 
     def __init__(self, name='countFeatureGenerator'):
         super(CountFeatureGenerator, self).__init__(name)

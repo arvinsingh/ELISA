@@ -8,6 +8,16 @@ from .helpers import *
 
 
 class SentimentFeatureGenerator(FeatureGenerator):
+    """
+    This modules uses the Sentiment Analyzer in the NLTK package 
+    to assign a sentiment polarity score to the headline and body 
+    separately. For example, negative score means the text shows 
+    a negative opinion of something. This score can be informative 
+    of whether the body is being positive about a subject while the 
+    headline is being negative. But it does not indicate whether it's 
+    the same subject that appears in the body and headline; however, 
+    this piece of information should be preserved in other features.
+    """
 
 
     def __init__(self, name='sentimentFeatureGenerator'):

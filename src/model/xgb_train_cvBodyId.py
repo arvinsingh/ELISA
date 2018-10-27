@@ -5,8 +5,8 @@ from itertools import chain
 from collections import Counter
 from sklearn.model_selection import StratifiedKFold, GroupKFold
 import xgboost as xgb
-from collections import Counter
-from .score import *
+import time
+from model.score import *
 from feature_generators.CountFeatureGenerator import *
 from feature_generators.TfidfFeatureGenerator import *
 from feature_generators.SvdFeatureGenerator import *
@@ -159,14 +159,24 @@ def train():
 
     dtrain = xgb.DMatrix(data_x, label=data_y, weight=w)
     dtest = xgb.DMatrix(test_x)
+
+    print("Total Feature count in train, test set: ", len(dtrain.feature_names))
+
+
+    print("Shape of train is ",data_x.shape," and shape of test is ", test_x.shape)
     watchlist = [(dtrain, 'train')]
+    print("----------Training XGBoost Model----------")
+    t0 = time.time()
     bst = xgb.train(params_xgb, 
                     dtrain,
                     n_iters,
                     watchlist,
                     feval=eval_metric,
                     verbose_eval=10)
-    
+    print("Model trained in: {} seconds".format(time.time()-t0))
+    with open("xgb_model.pkl", 'wb') as mod:
+        pickle.dump(bst, mod)
+    print("----------Predicting labels----------")
     #pred_y = bst.predict(dtest) # output: label, not probabilities
     #pred_y = bst.predict(dtrain) # output: label, not probabilities
     pred_prob_y = bst.predict(dtest).reshape(test_x.shape[0], 4) # predicted probabilities
