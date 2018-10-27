@@ -5,6 +5,9 @@
 /src/datasets/
 /src/tmp/
 
+# virtual environment 
+/DjangoServer/venv/
+
 # Compiled source #
 ###################
 *.com
