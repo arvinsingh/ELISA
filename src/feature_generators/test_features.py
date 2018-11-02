@@ -22,7 +22,6 @@ def CountFeatureGenerator(df):
 
     grams = ["unigram", "bigram", "trigram"]
     feat_names = ["Headline", "articleBody"]
-    print ("generate counting features")
     for feat_name in feat_names:
         for gram in grams:
             df["count_of_%s_%s" % (feat_name, gram)] = list(df.apply(lambda x: len(x[feat_name + "_" + gram]), axis=1))
@@ -84,7 +83,7 @@ def TfidfFeatureGenerator(df):
     print("\n---Generating TFIDF Features:---")
 
     # Fit a TfidfVectorizer on the concatenated strings
-    with open('vec.pkl', 'rb') as vocab:
+    with open('saved_data/vec.pkl', 'rb') as vocab:
         vec = pickle.load(vocab)
     
     # Tfidf for Headline
