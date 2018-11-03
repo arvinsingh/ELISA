@@ -8,6 +8,10 @@
 # virtual environment 
 /DjangoServer/venv/
 
+# IDE cache
+/.vscode/
+/DjangoApp/.idea/
+
 # Compiled source #
 ###################
 *.com
