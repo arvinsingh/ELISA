@@ -1,9 +1,18 @@
-{% include 'header.html' %}
+{% load staticfiles %}
+<html>
+    <head>
+        <title>ELISA | Django Server</title>
+    </head>
 
-<h2>Meta Modules : </h2>
+    <body background={% static 'images/django.png' %}>
+            <h2 align="center" style="
+                font-size:50px;
+                color:white;"> 
+        
+        ELISA | working fine | Django Server
 
-<h3> * <a target="_blank" href={{ hadoop_url }}> Hadoop HDFS (Dataset + Model)</a></h3>
+        </h2>
+    </body>
 
-<h3> * <a target="_blank" href={{ jupyter_url }}> Jupyter Notebook (Python Script for Data processing)</a></h3>
+</html>
 
-{% include 'footer.html' %}

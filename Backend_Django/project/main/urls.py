@@ -14,14 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include, re_path
+from django.urls import path
 from main import views
 
 urlpatterns = [
-    path('admin', admin.site.urls),
-    path('', views.index),
-    path('api/', include('main.urls')),
-    path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
-    path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
-    re_path(r'^(?P<error_url>.*)$', views.error),
+    path('', views.rest_index, name="api"),
+    path('platform', views.platform, name="platform"),
+    path('article', views.ArticleView.as_view(), name="article"),
+    path('post', views.PostView.as_view(), name="post")
 ]
