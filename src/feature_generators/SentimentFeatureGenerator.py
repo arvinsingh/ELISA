@@ -1,10 +1,11 @@
-from .FeatureGenerator import *
+from FeatureGenerator import *
 import pandas as pd
 import numpy as np
+from time import time
 import pickle
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk.tokenize import sent_tokenize
-from .helpers import *
+from helpers import *
 
 
 class SentimentFeatureGenerator(FeatureGenerator):
@@ -26,12 +27,10 @@ class SentimentFeatureGenerator(FeatureGenerator):
 
     def process(self, df):
 
-        print ('generating sentiment features')
-        print ('for headline')
-        
-        n_train = df[~df['target'].isnull()].shape[0]
-        n_test = df[df['target'].isnull()].shape[0]
+        t0 = time()
+        print("\n---Generating Sentiment Features:---\n")
 
+        print ('for headline')
         # calculate the polarity score of each sentence then take the average
         sid = SentimentIntensityAnalyzer()
         def compute_sentiment(sentences):
@@ -45,79 +44,53 @@ class SentimentFeatureGenerator(FeatureGenerator):
         df['headline_sents'] = df['Headline'].apply(lambda x: sent_tokenize(x))
         df = pd.concat([df, df['headline_sents'].apply(lambda x: compute_sentiment(x))], axis=1)
         df.rename(columns={'compound':'h_compound', 'neg':'h_neg', 'neu':'h_neu', 'pos':'h_pos'}, inplace=True)
-        #print 'df:'
-        #print df
-        #print df.columns
-        #print df.shape
+
         headlineSenti = df[['h_compound','h_neg','h_neu','h_pos']].values
-        print ('headlineSenti.shape:')
-        print (headlineSenti.shape)
+        print ('headlineSenti.shape:', headlineSenti.shape)
+
         
-        headlineSentiTrain = headlineSenti[:n_train, :]
-        outfilename_hsenti_train = "train.headline.senti.pkl"
-        with open("../saved_data/" + outfilename_hsenti_train, "wb") as outfile:
-            pickle.dump(headlineSentiTrain, outfile, -1)
-        print ('headline sentiment features of training set saved in %s' % outfilename_hsenti_train)
+        outfilename_hsenti = "headline.senti.pkl"
+        with open("../saved_data/" + outfilename_hsenti, "wb") as outfile:
+            pickle.dump(headlineSenti, outfile, -1)
+        print ('headline sentiment features saved in %s' % outfilename_hsenti)
         
-        if n_test > 0:
-            # test set is available
-            headlineSentiTest = headlineSenti[n_train:, :]
-            outfilename_hsenti_test = "test.headline.senti.pkl"
-            with open("../saved_data/" + outfilename_hsenti_test, "wb") as outfile:
-                pickle.dump(headlineSentiTest, outfile, -1)
-            print ('headline sentiment features of test set saved in %s' % outfilename_hsenti_test)
-        
-        print ('headine senti done')
+        print ('headine sentiment done')
         
         #return 1
 
         print ('for body')
-        #df['body_sents'] = df['articleBody'].map(lambda x: sent_tokenize(x.decode('utf-8')))
         df['body_sents'] = df['articleBody'].map(lambda x: sent_tokenize(x))
         df = pd.concat([df, df['body_sents'].apply(lambda x: compute_sentiment(x))], axis=1)
         df.rename(columns={'compound':'b_compound', 'neg':'b_neg', 'neu':'b_neu', 'pos':'b_pos'}, inplace=True)
-        #print ('body df:')
-        #print (df)
-        #print (df.columns)
         bodySenti = df[['b_compound','b_neg','b_neu','b_pos']].values
-        print ('bodySenti.shape:')
-        print (bodySenti.shape)
-        
-        bodySentiTrain = bodySenti[:n_train, :]
-        outfilename_bsenti_train = "train.body.senti.pkl"
-        with open("../saved_data/" + outfilename_bsenti_train, "wb") as outfile:
-            pickle.dump(bodySentiTrain, outfile, -1)
-        print ('body sentiment features of training set saved in %s' % outfilename_bsenti_train)
-        
-        if n_test > 0:
-            # test set is available
-            bodySentiTest = bodySenti[n_train:, :]
-            outfilename_bsenti_test = "test.body.senti.pkl"
-            with open("../saved_data/" + outfilename_bsenti_test, "wb") as outfile:
-                pickle.dump(bodySentiTest, outfile, -1)
-            print ('body sentiment features of test set saved in %s' % outfilename_bsenti_test)
+        print ('bodySenti.shape:', bodySenti.shape)
+
+
+        outfilename_bsenti = "body.senti.pkl"
+        with open("../saved_data/" + outfilename_bsenti, "wb") as outfile:
+            pickle.dump(bodySenti, outfile, -1)
+        print ('body sentiment features saved in %s' % outfilename_bsenti)
 
         print ('body senti done')
+
+        print("\n---Sentiment Features is complete---")
+        print("Time taken {} seconds\n".format(time() - t0))
 
         return 1
 
 
-    def read(self, header='train'):
+    def read(self):
 
-        filename_hsenti = "%s.headline.senti.pkl" % header
+        filename_hsenti = "headline.senti.pkl"
         with open("../saved_data/" + filename_hsenti, "rb") as infile:
             headlineSenti = pickle.load(infile)
 
-        filename_bsenti = "%s.body.senti.pkl" % header
+        filename_bsenti = "body.senti.pkl"
         with open("../saved_data/" + filename_bsenti, "rb") as infile:
             bodySenti = pickle.load(infile)
 
-        print ('headlineSenti.shape:')
-        print (headlineSenti.shape)
-        #print (type(headlineSenti))
-        print ('bodySenti.shape:')
-        print (bodySenti.shape)
-        #print (type(bodySenti))
+        print ('headlineSenti.shape:', headlineSenti.shape)
+        print ('bodySenti.shape: ', bodySenti.shape)
 
         return [headlineSenti, bodySenti]
 

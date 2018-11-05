@@ -1,13 +1,13 @@
-from . import ngram
+import ngram
 import pandas as pd
 import numpy as np
 import pickle
-from .helpers import *
-from .CountFeatureGenerator import *
-from .TfidfFeatureGenerator import *
-from .SvdFeatureGenerator import *
-from .Word2VecFeatureGenerator import *
-from .SentimentFeatureGenerator import *
+from helpers import *
+from CountFeatureGenerator import *
+from TfidfFeatureGenerator import *
+from SvdFeatureGenerator import *
+from Word2VecFeatureGenerator import *
+from SentimentFeatureGenerator import *
 #from AlignmentFeatureGenerator import *
 
 def process():

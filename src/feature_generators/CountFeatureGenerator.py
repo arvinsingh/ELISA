@@ -1,9 +1,10 @@
-from .FeatureGenerator import *
-from . import ngram
+from FeatureGenerator import *
+import ngram
 import pickle
 import pandas as pd
+from time import time
 from nltk.tokenize import sent_tokenize
-from .helpers import *
+from helpers import *
 import hashlib
 
 
@@ -27,10 +28,12 @@ class CountFeatureGenerator(FeatureGenerator):
 
 
     def process(self, df):
+        t0 = time()
+        print("\n---Generating Counting Features:---\n")
 
         grams = ["unigram", "bigram", "trigram"]
         feat_names = ["Headline", "articleBody"]
-        print ("generate counting features")
+
         for feat_name in feat_names:
             for gram in grams:
                 df["count_of_%s_%s" % (feat_name, gram)] = list(df.apply(lambda x: len(x[feat_name + "_" + gram]), axis=1))
@@ -48,9 +51,7 @@ class CountFeatureGenerator(FeatureGenerator):
         
         # number of sentences in headline and body
         for feat_name in feat_names:
-            #df['len_sent_%s' % feat_name] = df[feat_name].apply(lambda x: len(sent_tokenize(x.decode('utf-8').encode('ascii', errors='ignore'))))
             df['len_sent_%s' % feat_name] = df[feat_name].apply(lambda x: len(sent_tokenize(x)))
-            #print df['len_sent_%s' % feat_name]
 
         # dump the basic counting features into a file
         feat_names = [ n for n in df.columns \
@@ -101,71 +102,34 @@ class CountFeatureGenerator(FeatureGenerator):
             'unconfirmed'
         ]
         
-        #df['refuting_words_in_headline'] = df['Headline'].map(lambda x: 1 if w in x else 0 for w in _refuting_words)
-        #df['hedging_words_in_headline'] = df['Headline'].map(lambda x: 1 if w in x else 0 for w in _refuting_words)
-        #check_words = _refuting_words + _hedging_seed_words
+
         check_words = _refuting_words
         for rf in check_words:
             fname = '%s_exist' % rf
             feat_names.append(fname)
             df[fname] = df['Headline'].map(lambda x: 1 if rf in x else 0)
 	    
-        # number of body texts paired up with the same headline
-        #df['headline_hash'] = df['Headline'].map(lambda x: hashlib.md5(x).hexdigest())
-        #nb_dict = df.groupby(['headline_hash'])['Body ID'].nunique().to_dict()
-        #df['n_bodies'] = df['headline_hash'].map(lambda x: nb_dict[x])
-        #feat_names.append('n_bodies')
-        # number of headlines paired up with the same body text
-        #nh_dict = df.groupby(['Body ID'])['headline_hash'].nunique().to_dict()
-        #df['n_headlines'] = df['Body ID'].map(lambda x: nh_dict[x])
-        #feat_names.append('n_headlines')
-        print ('BasicCountFeatures:')
-        print (df)
-        
-        # split into train, test portion and save in separate files
-        train = df[~df['target'].isnull()]
-        print ('train:')
-        print (train[['Headline_unigram','Body ID', 'count_of_Headline_unigram']])
-        xBasicCountsTrain = train[feat_names].values
-        outfilename_bcf_train = "train.basic.pkl"
-        with open("../saved_data/" + outfilename_bcf_train, "wb") as outfile:
-            pickle.dump(feat_names, outfile, -1)
-            pickle.dump(xBasicCountsTrain, outfile, -1)
-        print ('basic counting features for training saved in %s' % outfilename_bcf_train)
-        
-        test = df[df['target'].isnull()]
-        print ('test:')
-        print (test[['Headline_unigram','Body ID', 'count_of_Headline_unigram']])
-        #return 1
-        if test.shape[0] > 0:
-            # test set exists
-            print ('saving test set')
-            xBasicCountsTest = test[feat_names].values
-            outfilename_bcf_test = "test.basic.pkl"
-            with open("../saved_data/" + outfilename_bcf_test, 'wb') as outfile:
-                pickle.dump(feat_names, outfile, -1)
-                pickle.dump(xBasicCountsTest, outfile, -1)
-                print ('basic counting features for test saved in %s' % outfilename_bcf_test)
 
+        xBasicCounts = df[feat_names].values
+        print ('xBasicCounts.shape:', xBasicCounts.shape)
+        outfilename_bcf = "basic.pkl"
+        with open("../saved_data/" + outfilename_bcf, "wb") as outfile:
+            pickle.dump(feat_names, outfile, -1)
+            pickle.dump(xBasicCounts, outfile, -1)
+        print ('basic counting features saved in %s' % outfilename_bcf)
+
+        print ('\n---Counting Features is complete---')
+        print("Time taken {} seconds\n".format(time() - t0))
         return 1
 
 
-    def read(self, header='train'):
+    def read(self):
 
-        filename_bcf = "%s.basic.pkl" % header
+        filename_bcf = "basic.pkl"
         with open("../saved_data/" + filename_bcf, "rb") as infile:
-            feat_names = pickle.load(infile)
+            _ = pickle.load(infile)
             xBasicCounts = pickle.load(infile)
-            print ('feature names: ')
-            print (feat_names)
-            print ('xBasicCounts.shape:')
-            print (xBasicCounts.shape)
-            #print (type(xBasicCounts))
-
+        
+        print ('xBasicCounts.shape: ', xBasicCounts.shape)
         return [xBasicCounts]
-
-if __name__ == '__main__':
-    
-    cf = CountFeatureGenerator()
-    cf.read()
 
