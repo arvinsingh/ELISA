@@ -5,8 +5,12 @@
 /src/datasets/
 /src/tmp/
 
+# Models and other files
+/Backend_Django/project/media
+/Backend_Django/project/metastore_db
+
 # virtual environment 
-/DjangoServer/venv/
+/Backend_Django/venv/
 
 # IDE cache
 /.vscode/

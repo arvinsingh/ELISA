@@ -1,32 +1,76 @@
-import { ApiService } from './../api.service';
-import { Component, OnInit, getPlatform } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
+import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
-  providers: [ApiService]
 })
+
 export class DashboardComponent implements OnInit {
-  data: any;
+  radioModel = 'Month';
 
-  constructor(private api: ApiService) {
-    this.data = [{name: 'yo'}, {name: 'fg'}];
-    this.getPlatform();
-  }
+   // lineChart1
+   public lineChart1Data: Array<any> = [
+    {
+      data: [65, 59, 84, 84, 51, 55, 40],
+      label: 'Series A'
+    }
+  ];
+  public lineChart1Labels: Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  public lineChart1Options: any = {
+    tooltips: {
+      enabled: false,
+      custom: CustomTooltips
+    },
+    maintainAspectRatio: false,
+    scales: {
+      xAxes: [{
+        gridLines: {
+          color: 'transparent',
+          zeroLineColor: 'transparent'
+        },
+        ticks: {
+          fontSize: 2,
+          fontColor: 'transparent',
+        }
 
-  getPlatform = () => {
-    this.api.getAllPlatform().subscribe(
-      response => {
-        this.data = response;
+      }],
+      yAxes: [{
+        display: false,
+        ticks: {
+          display: false,
+          min: 40 - 5,
+          max: 84 + 5,
+        }
+      }],
+    },
+    elements: {
+      line: {
+        borderWidth: 1
       },
-      error => {
-        console.log(error);
-      }
-    );
-  }
+      point: {
+        radius: 4,
+        hitRadius: 10,
+        hoverRadius: 4,
+      },
+    },
+    legend: {
+      display: false
+    }
+  };
+  public lineChart1Colours: Array<any> = [
+    {
+      backgroundColor: getStyle('--primary'),
+      borderColor: 'rgba(255,255,255,.55)'
+    }
+  ];
+  public lineChart1Legend = false;
+  public lineChart1Type = 'line';
 
-  ngOnInit() {
-  }
 
+  ngOnInit(): void {
+
+  }
 }
