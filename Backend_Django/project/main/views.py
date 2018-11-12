@@ -34,13 +34,11 @@ else:
     print("\n\nNothing is loaded.\n")
 
 
+class Platform(generics.ListAPIView):
+    queryset = Platform_Model.objects.all()
+    serializer = PlatformSerializer(queryset, many=True)
 
-@api_view(['GET'])
-def platform(request):
-    """
-    to read the platform url links 
-    """
-    if request.method == 'GET':
+    def get(self, request):
         queryset = Platform_Model.objects.all()
         serializer = PlatformSerializer(queryset, many=True)
         return Response(serializer.data)
@@ -55,10 +53,6 @@ class ArticleView(generics.CreateAPIView):
     queryset = Articles_Model.objects.all()
     serializer_class = ArticlesSerializer
 
-    def create(self, request, *args, **kwargs):
-        serializer = self.serializer_class(...)
-        data = serializer.data
-        return Response(status=status.HTTP_204_NO_CONTENT)
 
     def post(self, request):
         try:
@@ -139,7 +133,7 @@ class PostView(generics.CreateAPIView):
 
                 # save data to database
                 serializer.save()
-                data['message'] = {'status' : 'success', 'description': 'click bait detected.'}
+                data['message'] = {'status' : 'success', 'description': 'module successfully executed.'}
 
                 # return json object containing analysis data
                 return Response(data, status=status.HTTP_201_CREATED)

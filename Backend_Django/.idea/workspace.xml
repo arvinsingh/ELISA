@@ -2,15 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="136141c3-f292-4e87-83e5-eaa6f79a9b01" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../JupyterNotebooks/DL_LSTM_PyTorch.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JupyterNotebooks/SentimentAnalysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../JupyterNotebooks/SentimentAnalysis.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JupyterNotebooks/ToneAnalysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../JupyterNotebooks/ToneAnalysis.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/ELISA_Django_Server/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/ELISA_Django_Server/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/main/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/main/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/main/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/main/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-371318058">
@@ -51,41 +74,81 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="948665139">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="ArticleView" value="3" />
+          <entry key="ArticlesSerializer" value="1" />
+          <entry key="Articles_Model" value="1" />
+          <entry key="PlatformSerializer" value="1" />
+          <entry key="Platform_Model" value="1" />
+          <entry key="PostSerializer" value="1" />
+          <entry key="PostView" value="1" />
+          <entry key="Post_Model" value="1" />
+          <entry key="py" value="25" />
+          <entry key="txt" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Python" value="22" />
+          <entry key="UML" value="13" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="155" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="155" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/ELISA_Django_Server/settings.py">
+        <entry file="file://$PROJECT_DIR$/project/main/tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+            <state>
+              <caret column="20" selection-start-column="20" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/templates/index.html">
+        <entry file="file://$PROJECT_DIR$/project/main/choices.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project/main/load.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+            <state relative-caret-position="270">
+              <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/templates/header.html">
+        <entry file="file://$PROJECT_DIR$/project/ELISA_Django_Server/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="81" selection-start-line="5" selection-start-column="81" selection-end-line="5" selection-end-column="81" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/ELISA_Django_Server/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+            <state relative-caret-position="270">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="e#643#675#0" expanded="true" />
               </folding>
@@ -94,19 +157,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/main/models.py">
+        <entry file="file://$PROJECT_DIR$/project/main/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="58" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
+            <state relative-caret-position="330">
+              <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+              <folding>
+                <element signature="e#643#675#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/main/views.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
+            <state relative-caret-position="-551">
+              <caret line="38" column="24" lean-forward="true" selection-start-line="36" selection-end-line="43" selection-end-column="40" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
               </folding>
@@ -114,22 +180,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/templates/404.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/project/main/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/templates/settings.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="136">
+              <caret line="37" column="51" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="e#0#44#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -161,8 +218,18 @@
         <option value="$PROJECT_DIR$/ELISA_Django_Server/templates/404.html" />
         <option value="$PROJECT_DIR$/ELISA_Django_Server/ELISA_Django_Server/settings.py" />
         <option value="$PROJECT_DIR$/ELISA_Django_Server/main/views.py" />
+        <option value="$PROJECT_DIR$/project/main/views.py" />
+        <option value="$PROJECT_DIR$/project/ELISA_Django_Server/urls.py" />
+        <option value="$PROJECT_DIR$/project/main/urls.py" />
+        <option value="$PROJECT_DIR$/project/main/serializers.py" />
       </list>
     </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="91" />
@@ -182,31 +249,39 @@
         <subPane>
           <expand>
             <path>
-              <item name="DjangoServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DjangoServer" type="462c0819:PsiDirectoryNode" />
+              <item name="Backend_Django" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Backend_Django" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="DjangoServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DjangoServer" type="462c0819:PsiDirectoryNode" />
+              <item name="Backend_Django" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Backend_Django" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Backend_Django" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Backend_Django" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
               <item name="ELISA_Django_Server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="DjangoServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DjangoServer" type="462c0819:PsiDirectoryNode" />
-              <item name="ELISA_Django_Server" type="462c0819:PsiDirectoryNode" />
-              <item name="ELISA_Django_Server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DjangoServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DjangoServer" type="462c0819:PsiDirectoryNode" />
-              <item name="ELISA_Django_Server" type="462c0819:PsiDirectoryNode" />
+              <item name="Backend_Django" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Backend_Django" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="DjangoServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DjangoServer" type="462c0819:PsiDirectoryNode" />
-              <item name="ELISA_Django_Server" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="Backend_Django" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Backend_Django" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="analysis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Backend_Django" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Backend_Django" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="click_bait" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -217,7 +292,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -246,8 +323,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26307365" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26947704" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -259,96 +337,391 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32972974" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50053364" side_tool="true" weight="0.32972974" />
+      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.4994664" weight="0.32901832" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" weight="0.32972974" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="R Graphics" order="3" />
       <window_info anchor="right" id="R Packages" order="4" />
+      <window_info anchor="right" id="Database" order="5" weight="0.32977587" />
+      <window_info anchor="right" id="SciView" order="6" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/templates/footer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/requirements.txt" />
+    <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/templates/footer.html" />
     <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/templates/dataset.html" />
     <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/templates/links.html" />
-    <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/ELISA_Django_Server/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+    <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/ELISA_Django_Server/settings.py" />
+    <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/templates/index.html" />
+    <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/templates/header.html" />
+    <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/ELISA_Django_Server/urls.py" />
+    <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/main/models.py" />
+    <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/templates/404.html" />
+    <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/templates/settings.html" />
+    <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/main/views.py" />
+    <entry file="uml://Python/project.main.views.ArticleView">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>project.main.views.ArticleView</OriginalElement>
+          <nodes>
+            <node x="" y="">CreateAPIView</node>
+            <node x="" y="">project.main.views.ArticleView</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="124.0" y="57.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Methods</Category>
+            <Category>Inner Classes</Category>
+            <Category>Fields</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+    <entry file="uml://Python/project.main.views.PostView">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>project.main.views.PostView</OriginalElement>
+          <nodes>
+            <node x="48.5" y="0.0">CreateAPIView</node>
+            <node x="0.0" y="82.0">project.main.views.PostView</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="project.main.views.PostView" target="CreateAPIView">
+              <point x="0.0" y="-52.5" />
+              <point x="0.0" y="16.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-331.0" y="15.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Methods</Category>
+            <Category>Inner Classes</Category>
+            <Category>Fields</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/templates/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="81" selection-start-line="5" selection-start-column="81" selection-end-line="5" selection-end-column="81" />
+    <entry file="uml://Python/#/home/robomex/Desktop/ELISA/Backend_Django/project/main/views.py">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#/home/robomex/Desktop/ELISA/Backend_Django/project/main/views.py</OriginalElement>
+          <nodes>
+            <node x="267.0" y="82.0">project.main.views.PostView</node>
+            <node x="185.5" y="0.0">CreateAPIView</node>
+            <node x="0.0" y="82.0">project.main.views.ArticleView</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="project.main.views.ArticleView" target="CreateAPIView">
+              <point x="0.0" y="-52.5" />
+              <point x="123.5" y="57.0" />
+              <point x="219.5" y="57.0" />
+              <point x="-34.0" y="16.0" />
+            </edge>
+            <edge source="project.main.views.PostView" target="CreateAPIView">
+              <point x="0.0" y="-52.5" />
+              <point x="383.5" y="57.0" />
+              <point x="287.5" y="57.0" />
+              <point x="34.0" y="16.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-197.0" y="15.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Methods</Category>
+            <Category>Inner Classes</Category>
+            <Category>Fields</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/ELISA_Django_Server/urls.py">
+    <entry file="file://$PROJECT_DIR$/project/ELISA_Django_Server/settings.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="uml://Python/project.main.models.Platform_Model">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>project.main.models.Platform_Model</OriginalElement>
+          <nodes>
+            <node x="0.0" y="82.0">project.main.models.Platform_Model</node>
+            <node x="106.5" y="0.0">Model</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="project.main.models.Platform_Model" target="Model">
+              <point x="0.0" y="-76.5" />
+              <point x="0.0" y="16.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-302.0" y="15.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Methods</Category>
+            <Category>Inner Classes</Category>
+            <Category>Fields</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/project.main.models.Articles_Model">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>project.main.models.Articles_Model</OriginalElement>
+          <nodes>
+            <node x="102.0" y="0.0">Model</node>
+            <node x="0.0" y="82.0">project.main.models.Articles_Model</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="project.main.models.Articles_Model" target="Model">
+              <point x="0.0" y="-52.5" />
+              <point x="0.0" y="16.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-307.0" y="15.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Methods</Category>
+            <Category>Inner Classes</Category>
+            <Category>Fields</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/project.main.serializers.PlatformSerializer">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>project.main.serializers.PlatformSerializer</OriginalElement>
+          <nodes>
+            <node x="91.0" y="0.0">ModelSerializer</node>
+            <node x="0.0" y="82.0">project.main.serializers.PlatformSerializer</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="project.main.serializers.PlatformSerializer" target="ModelSerializer">
+              <point x="0.0" y="-64.5" />
+              <point x="0.0" y="16.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-286.0" y="15.0" />
+          <SelectedNodes>
+            <node>project.main.serializers.PlatformSerializer</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Methods</Category>
+            <Category>Inner Classes</Category>
+            <Category>Fields</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/project.main.models.Post_Model">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>project.main.models.Post_Model</OriginalElement>
+          <nodes>
+            <node x="" y="">Model</node>
+            <node x="" y="">project.main.models.Post_Model</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="130.0" y="57.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Methods</Category>
+            <Category>Inner Classes</Category>
+            <Category>Fields</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/project.main.serializers.ArticlesSerializer">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>project.main.serializers.ArticlesSerializer</OriginalElement>
+          <nodes>
+            <node x="0.0" y="82.0">project.main.serializers.ArticlesSerializer</node>
+            <node x="86.5" y="0.0">ModelSerializer</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="project.main.serializers.ArticlesSerializer" target="ModelSerializer">
+              <point x="0.0" y="-52.5" />
+              <point x="0.0" y="16.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-291.0" y="15.0" />
+          <SelectedNodes>
+            <node>project.main.serializers.ArticlesSerializer</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Methods</Category>
+            <Category>Inner Classes</Category>
+            <Category>Fields</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/project.main.serializers.PostSerializer">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>project.main.serializers.PostSerializer</OriginalElement>
+          <nodes>
+            <node x="" y="">ModelSerializer</node>
+            <node x="" y="">project.main.serializers.PostSerializer</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="146.0" y="57.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Methods</Category>
+            <Category>Inner Classes</Category>
+            <Category>Fields</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/main/admin.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="uml://Python/#/home/robomex/Desktop/ELISA/Backend_Django/project/main/analysis/feature_generate.py">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#/home/robomex/Desktop/ELISA/Backend_Django/project/main/analysis/feature_generate.py</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="240.0" y="240.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/main/click_bait/clickbait_detect.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/main/analysis/feature_generate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+        <state relative-caret-position="315">
+          <caret line="21" column="18" lean-forward="true" selection-start-line="19" selection-end-line="87" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/main/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="41" column="15" lean-forward="true" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/manage.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/main/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" selection-start-column="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/main/choices.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/main/load.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/ELISA_Django_Server/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="e#643#675#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/main/models.py">
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/rest_framework/documentation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="58" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
+        <state relative-caret-position="248">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/templates/404.html">
+    <entry file="file://$PROJECT_DIR$/project/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
-        </state>
+        <state relative-caret-position="-817" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/templates/settings.html">
+    <entry file="file://$PROJECT_DIR$/project/main/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="330">
+          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="e#643#675#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ELISA_Django_Server/main/views.py">
+    <entry file="file://$PROJECT_DIR$/project/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
+        <state relative-caret-position="-551">
+          <caret line="38" column="24" lean-forward="true" selection-start-line="36" selection-end-line="43" selection-end-column="40" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/main/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="37" column="51" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <script src='https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js'></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -27,50 +28,22 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js' integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
   <script src='https://unpkg.com/@coreui/coreui/dist/js/coreui.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'></script>
+
   <script>
-    $('.form').find('input, textarea').on('keyup blur focus', function (e) {
-
-      var $this = $(this),
-          label = $this.prev('label');
-
-        if (e.type === 'keyup') {
-          if ($this.val() === '') {
-              label.removeClass('active highlight');
-            } else {
-              label.addClass('active highlight');
-            }
-        } else if (e.type === 'blur') {
-          if( $this.val() === '' ) {
-            label.removeClass('active highlight');
-          } else {
-            label.removeClass('highlight');
+          function showArticle()
+          {
+            document.getElementById('article').style.display = 'block';
+            document.getElementById('post').style.display = 'none';
           }
-        } else if (e.type === 'focus') {
-
-          if( $this.val() === '' ) {
-            label.removeClass('highlight');
+          function showPost()
+          {
+            document.getElementById('article').style.display = 'none';
+            document.getElementById('post').style.display = 'block';
           }
-          else if( $this.val() !== '' ) {
-            label.addClass('highlight');
-          }
-        }
-
-    });
-
-    $('.tab a').on('click', function (e) {
-
-      e.preventDefault();
-
-      $(this).parent().addClass('active');
-      $(this).parent().siblings().removeClass('active');
-
-      target = $(this).attr('href');
-
-      $('.tab-content > div').not(target).hide();
-
-      $(target).fadeIn(600);
-
-    });
+          $(document).ready(function(){
+            $('select').formSelect();
+          });
   </script>
 </body>
 </html>

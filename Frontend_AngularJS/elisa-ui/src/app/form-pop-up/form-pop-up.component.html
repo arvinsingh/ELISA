@@ -1,0 +1,75 @@
+
+<!--pop up for article-->
+<!-- div Trigger -->
+<a class='waves-effect waves-light btn' onclick='showArticle()'>News Article</a>
+  <div style="padding-right:100px;display:inline;"></div>
+<a class="waves-effect waves-light btn" onclick="showPost()">Social Media Post</a>
+
+<!-- div Structure -->
+<div id="article">
+  <div class="modal-content">
+    <h4>News Article Form</h4>
+    <h6>It predicts and analyses the Fake News if any.</h6>
+  </div>
+
+  <div class="row">
+      <form id="articleForm" class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="headline" type="text" class="validate">
+            <label for="headline">Headline</label>
+            <span class="helper-text" data-error="wrong" data-success="right">Enter artice headline here</span>
+          </div>
+
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+              <input id="content" type="text" class="validate">
+              <label for="content">Content</label>
+              <span class="helper-text" data-error="wrong" data-success="right">Enter artice content here</span>
+            </div>
+          </div>
+
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+        </button>
+      </form>
+  </div>
+
+</div>
+
+<div id="post" style="display: none;">
+    <div class="modal-content">
+      <h4>Social Media Post</h4>
+      <h6>This modules is for click bait detection.</h6>
+    </div>
+    <div class="row">
+        <form id="postForm" class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="media_post" type="text" class="validate">
+              <label for="media_post">Social Media Post</label>
+              <span class="helper-text" data-error="wrong" data-success="right">Enter post here</span>
+            </div>
+
+          </div>
+          <div class="row">
+
+              <div class="input-field col s12">
+
+                  <select class="browser-default" style='font-size:20px;'>
+                    <option value="" disabled='disabled' selected='selected'>Choose your platform </option>
+                    <option value="1">Facebook</option>
+                    <option value="2">Twitter</option>
+                    <option value="3">Whatsapp</option>
+                    <option value="3">Others</option>
+                  </select>
+
+                </div>
+            </div>
+
+          <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+          </button>
+        </form>
+    </div>
+</div>

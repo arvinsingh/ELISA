@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { FormsModule } from '@angular/forms';
+import { FormPopUpComponent } from './form-pop-up/form-pop-up.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
     ErrorComponent,
     HomeComponent,
     DashboardComponent,
+    FormPopUpComponent,
   ],
   imports: [
     BrowserModule,

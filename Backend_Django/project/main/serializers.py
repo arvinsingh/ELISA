@@ -34,6 +34,7 @@ class ArticlesSerializer(serializers.ModelSerializer):
     two fields with POST option
     return will show analyis data in the form of JSON object
     """
+
     headline = serializers.CharField(max_length=200)
     content = serializers.CharField(max_length=1500)
 
