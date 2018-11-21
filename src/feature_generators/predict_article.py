@@ -1,12 +1,13 @@
 import pickle
+from time import time
+
 import numpy as np
 import pandas as pd
 import xgboost as xgb
-from time import time
-from feature_generators.test_features import *
-from feature_generators.helpers import *
-import feature_generators.ngram as ngram
 
+import ngram as ngram
+from helpers import *
+from prediction_features_generator import *
 
 LABELS = ['reliable', 'unreliable']
 
@@ -65,12 +66,12 @@ def build_test_data(data):
 
     data = process(data)
     
-    generators = [CountFeatureGenerator,
+    generators = [
+                  CountFeatureGenerator,
                   TfidfFeatureGenerator,
-                  # SvdFeatureGenerator,
-                  ReadabilityFeatureGenerator,
                   Word2VecFeatureGenerator,
-                  SentimentFeatureGenerator
+                  SentimentFeatureGenerator,
+                  ReadabilityFeatureGenerator
                  ]
     
     # Class generators one by one to generate features
@@ -96,9 +97,11 @@ def check(headline, body):
     # Build DMatrix for booster
     dtest = xgb.DMatrix(test_x)
     print("Total Feature count: ", len(dtest.feature_names))
+
+    
     
     # Use Booster to predict class
-    pred_prob_y = bst.predict(dtest).reshape(test_x.shape[0], 4) # predicted probabilities
+    pred_prob_y = xgb_mod.predict(dtest).reshape(test_x.shape[0], 4) # predicted probabilities
     pred_y = np.argmax(pred_prob_y, axis=1)
 
     # print (predicted)

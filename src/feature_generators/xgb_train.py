@@ -29,7 +29,7 @@ params_xgb = {
     #'objective': 'multi:softmax',
     'objective': 'multi:softprob',
     'eval_metric':'mlogloss',
-    'num_class': 4
+    'num_class': 2
 }
 
 # Load data
@@ -126,14 +126,15 @@ def train():
                     n_iters,
                     watchlist,
                     feval=eval_metric,
-                    verbose_eval=10)
+                    verbose_eval=10,
+                    early_stopping_rounds=80)
     with open("../saved_data/xgb_model.pkl", 'wb') as mod:
         pickle.dump(bst, mod)
     print("----------Predicting labels----------")
     print("Model trained in: {} seconds".format(time.time()-t0))
 
 
-    pred_prob_y = bst.predict(dtest).reshape(X_test.shape[0], 4) # predicted probabilities
+    pred_prob_y = bst.predict(dtest).reshape(X_test.shape[0], 2) # predicted probabilities
     pred_y = np.argmax(pred_prob_y, axis=1)
     print ('pred_y.shape: ', pred_y.shape)
     predicted = [LABELS[int(a)] for a in pred_y]
@@ -142,14 +143,15 @@ def train():
     y_test_['Reliable'] = pred_prob_y[:, 0]
     y_test_['Unreliable'] = pred_prob_y[:, 1]
 
-    y_test_.to_csv('../results/tree_pred_prob.csv', index=False)
+    y_test_.to_csv('../results/predictions_early_80.csv', index=False)
+    print("----Results saved in results/predictions_early_80.csv----")
 
 
-# Validate
+# Validate Needs to be implimented correctly!
 def cv():
 
     K_FOLD = 10
-    data = load_features()
+    data = load_features().astype(float)
     targets = load_targets()
 
     # K-Fold and Score Tracking
@@ -158,9 +160,10 @@ def cv():
     pscores = []
     n_folds = 10
     best_iters = [0] * n_folds
-    kf = GroupKFold(n_splits=K_FOLD)
+    # kf = GroupKFold(n_splits=K_FOLD)
+    kf = StratifiedKFold(n_splits=K_FOLD)
     print('Training Model...')
-    for fold, (train_idx, test_idx) in enumerate(kf.split(data, targets)):
+    for fold, (train_idx, test_idx) in enumerate(kf.split(data, targets['target'])):
         print('\n[K = ' + str(fold+1) + ']')
 
         # Train Model
@@ -176,7 +179,7 @@ def cv():
                         #maximize = True,
                         early_stopping_rounds=80)
 
-        pred_prob_y = bst.predict(dtest).reshape(targets[test_idx].shape[0], 4) # predicted probabilities
+        pred_prob_y = bst.predict(dtest).reshape(targets[test_idx].shape[0], 2) # predicted probabilities
         pred_y = bst.predict(dtest, ntree_limit=bst.best_ntree_limit).reshape(targets[test_idx].shape[0], 2)
         print ('predicted probabilities: ')
         print (pred_y)

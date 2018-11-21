@@ -1,13 +1,14 @@
 # ELISA - For FYP
 
 ## Overview
-This model takes as input a few text-based features derived from the headline and body of an article. Then it feeds the features into Gradient Boosted Trees to predict the relation between the headline and the body (`agree`/`disagree`/`discuss`/`unrelated`).
+
+The model takes two string inputs: Headline and article Body and feeds it to Boosted tree for prediction of article in (Reliable or Unreliable) class.
 
 ## Feature Engineering
 
-**1. Preprocessing (`generateFeatures.py`)**
+**1. Preprocessing (`gen_features.ipynb`)**
 
-The labels (`agree`, `disagree`, `discuss`, `unrelated`) are encoded into numeric target values as (`0`, `1`, `2`, `3`). The text of headline and body are then tokenized and stemmed (by `preprocess_data()` in `helpers.py`). Finally Uni-grams, bi-grams and tri-grams are created out of the list of tokens. These grams and the original text are used by the following feature extractor modules.
+The labels (`reliable`, `unreliable`) are encoded into numeric target values as (`0`, `1`). The text of headline and body are then tokenized and stemmed (by `preprocess_data()` in `helpers.py`). Finally Uni-grams, bi-grams and tri-grams are created out of the list of tokens. These grams and the original text are used by the following feature extractor modules.
 
 **2. Basic Count Features (`CountFeatureGenerator.py`)**
 
@@ -17,9 +18,9 @@ This module takes the uni-grams, bi-grams and tri-grams and creates various coun
 
 This module constructs sparse vector representations of the headline and body by calculating the Term-Frequency of each gram and normalize it by its Inverse-Document Frequency. First off a `TfidfVectorizer` is fit to the concatenations of headline and body text to obtain the vocabulary. Then using the same vocabulary it separately fits and transforms the headline grams and body grams into sparse vectors. It also calculates the cosine similarity between the headline vector and the body vector.
 
-**4. SVD Features (`SvdFeatureGenerator.py`)**
+**4. Readability Features (`ReadabilityFeatureGenerator.py`)**
 
-This module takes the TF-IDF features and applies Singular-Value Decomposition to them to obtain a compact, dense vector representation of the headline and body respectively. This procedure is [well known](https://en.wikipedia.org/wiki/Latent_semantic_analysis) and corresponds to finding the latent `topics` involved in the corpus and represent each headline/body text as a mixture of these `topics`. The cosine similarities between the SVD features of headline and body text are also computed. This similarity metric is very indicative of whether the body is related to the headline or not.
+This module takes Textstat Python package to calculate statistics from text to determine readability, complexity and grade level of a particular corpus.
 
 **5. Word2Vec Features (`Word2VecFeatureGenerator.py`)**
 
@@ -28,13 +29,6 @@ This module utilizes the pre-trained [word vectors](https://arxiv.org/abs/1301.3
 **6. Sentiment Features (`SentimentFeatureGenerator.py`)**
 
 This modules uses the Sentiment Analyzer in the `NLTK` package to assign a sentiment polarity score to the headline and body separately. For example, negative score means the text shows a negative opinion of something. This score can be informative of whether the body is being positive about a subject while the headline is being negative. But it does not indicate whether it's the same subject that appears in the body and headline; however, this piece of information should be preserved in other features.
-
-**7. Alignment Features (`*AlignmentFeatureGenerator.py`)**
-
-Working on this feature.
-
-## Classifier Construction (xgb\_train\_cvBodyId.py)
-The classifier used in this model is [Gradient Boosted Trees](https://en.wikipedia.org/wiki/Gradient_boosting). A very efficient implementation of GBDT is [XGBoost](http://xgboost.readthedocs.io/en/latest/). 10-fold cross-validation is used to estimate the performance of this model.
 
 ## Library Dependencies
 * Python <= 3.5
@@ -49,44 +43,14 @@ The classifier used in this model is [Gradient Boosted Trees](https://en.wikiped
 
 **2.`clone the repo`**
 
-**3. Download the `word2vec` [model](https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/) trained on Google News corpus. The file `GoogleNews-vectors-negative300.bin` has to be present in `/feature_generators`.**
+**3. Download the `GloVe` [model](http://nlp.stanford.edu/data/glove.6B.zip) trained on Wikipedia 2014 + Gigaword 5. Convert the file to word2vec.txt using `convert_GloVe2Word2Vec.ipynb` and save under `datasets/`.**
 
-**4. All the code needs to run from src because of relative paths. Run `generateFeatures.py` to produce all the feature files (`train_stances_processed.csv` and `test_stances_processed.csv` are the (encoding-wise) cleaned-up version of the orginal csv files. The following files will be generated:**
+**4. Use `prepare_data.ipynb` then `gen_features.ipynb` to generate all the required features.**
 
-```
-data.pkl
-test.basic.pkl
-test.body.senti.pkl
-test.body.svd.pkl
-test.body.tfidf.pkl
-test.body.word2vec.pkl
-test.headline.senti.pkl
-test.headline.svd.pkl
-test.headline.tfidf.pkl
-test.headline.word2vec.pkl
-test.sim.svd.pkl
-test.sim.tfidf.pkl
-test.sim.word2vec.pkl
-train.basic.pkl
-train.body.senti.pkl
-train.body.svd.pkl
-train.body.tfidf.pkl
-train.body.word2vec.pkl
-train.headline.senti.pkl
-train.headline.svd.pkl
-train.headline.tfidf.pkl
-train.headline.word2vec.pkl
-train.sim.svd.pkl
-train.sim.tfidf.pkl
-train.sim.word2vec.pkl
-```
+**All the pickled files are saved under `saved_data/`.**
 
-**All the pickled files are saved under /saved_data/.**
+**6. Run `xgb_train` to train and make predictions on the test set. Output file is `predictions_*.csv`**
 
-**5. Comment out line 121 in `TfidfFeatureGenerator.py`, then uncomment line 122 in the same file. Raw TF-IDF vectors are needed by `SvdFeatureGenerator.py` during feature generation, but only the similarities are needed for training.**
+**7. Use `Result_visualization.ipynb` and `test_xgb_model.ipynb` to study the output and use the model respectively.**
 
-**6. Run `xgb_train_cvBodyId.py` to train and make predictions on the test set. Output file is `predtest_cor2.csv`**
-
-All the output files are also stored under `./results/` and all parameters are hard-coded. 
-
-More work needs to be done.
+All the output files are also stored under `results/` and all parameters are hard-coded. 

@@ -13,7 +13,7 @@ from sklearn.decomposition import TruncatedSVD
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import normalize
 
-from .helpers import *
+from helpers import *
 
 model = gensim.models.KeyedVectors.load_word2vec_format('datasets/word2vec.txt')
 print ('GloVe model loaded!')
@@ -56,7 +56,7 @@ def CountFeatureGenerator(df):
                   if "count" in n \
                   or "ratio" in n \
                   or "len_sent" in n]
-        
+    
     # binary refuting features
     _refuting_words = [
         'fake', 'fraud', 'hoax', 'false', 'deny', 'denies', # 'refute',
