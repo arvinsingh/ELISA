@@ -1,0 +1,78 @@
+hello
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-6 col-lg-3">
+      <div class="card text-white bg-primary">
+        <div class="card-body pb-0">
+          <div class="btn-group float-right" dropdown>
+            <button type="button" class="btn btn-transparent dropdown-toggle p-0" dropdownToggle>
+              <i class="icon-settings"></i>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" *dropdownMenu>
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+          <div class="text-value">9.823</div>
+          <div>Members online</div>
+        </div>
+        <div class="chart-wrapper mt-3 mx-3" style="height:70px;">
+          <canvas baseChart class="chart"
+          [datasets]="lineChart1Data"
+          [labels]="lineChart1Labels"
+          [options]="lineChart1Options"
+          [colors]="lineChart1Colours"
+          [legend]="lineChart1Legend"
+          [chartType]="lineChart1Type"></canvas>
+        </div>
+      </div>
+    </div><!--/.col-->
+  </div>
+  <div class="sidebar">
+    <nav class="sidebar-nav">
+      <ul class="nav">
+        <li class="nav-title">Nav Title</li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="nav-icon cui-speedometer"></i> Nav item
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="nav-icon cui-speedometer"></i> With badge
+            <span class="badge badge-primary">NEW</span>
+          </a>
+        </li>
+        <li class="nav-item nav-dropdown">
+          <a class="nav-link nav-dropdown-toggle" href="#">
+            <i class="nav-icon cui-puzzle"></i> Nav dropdown
+          </a>
+          <ul class="nav-dropdown-items">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="nav-icon cui-puzzle"></i> Nav dropdown item
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="nav-icon cui-puzzle"></i> Nav dropdown item
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item mt-auto">
+          <a class="nav-link nav-link-success" href="https://coreui.io">
+            <i class="nav-icon cui-cloud-download"></i> Download CoreUI</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-danger" href="https://coreui.io/pro/">
+            <i class="nav-icon cui-layers"></i> Try CoreUI
+            <strong>PRO</strong>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+  </div>

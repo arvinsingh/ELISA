@@ -1,0 +1,168 @@
+
+<div class="ct" id="t1">
+  <div class="ct" id="t2">
+    <div class="ct" id="t3">
+      <div class="ct" id="t4">
+         <div class="ct" id="t5">
+
+          <ul id="menu">
+            <a href="#t1"><li class="icon fa fa-home" id="uno"></li></a>
+            <a href="#t2"><li class="icon fa fa-keyboard-o" id="dos"></li></a>
+            <a href="#t3"><li class="icon fa fa-users" id="tres"></li></a>
+            <a href="#t4"><li class="icon fa fa-project-diagram" id="cuatro"></li></a>
+            <a href="#t5"><li class="icon fa fa-screwdriver" id="cinco"></li></a>
+          </ul>
+          <div class="page" id="p1">
+              <span class="title" style="font-size: 60px;
+              padding-top: 520px;
+              font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+              position: absolute;
+              color: white;
+              padding-left: 10%;">
+                  Exploratory Liable Information Scanning in Articles
+                 </span>
+                 <span class="title" style="font-size: 40px;
+                 padding-top: 620px;
+                 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                 position: absolute;
+                 color: white;
+                 padding-left: 34%;" >The AI for News Reliability</span>
+
+                 <span class="hint" style="font-size: 20px;
+                 padding-top: 680px;
+                 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                 position: absolute;
+                 color: white;
+                 padding-left: 41%;">Tools and Technologies</span>
+
+                <span class="hint" style="
+                padding-top: 735px;position: absolute;
+                white-space:nowrap;
+                width: 100%;height:100%;
+                overflow: hidden;
+                padding-left: 17%;">
+                  <div *ngFor="let i of home_icons" style="display: inline;margin-left:60px;">
+                    <img width="80px" heig  ht="80px" src={{i.src}}/>
+                  </div>
+                </span>
+
+                 <span class="hint" style="font-size: 20px;
+                 padding-top: 860px;
+                 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                 position: absolute;
+                 color: white;
+                 padding-left: 33%;">Copyrights &copy; 2018. Final Year Project. BTECH 2015-2019</span>
+
+
+
+
+             <section class="icon" style="padding-right: 300px;">
+               <img width="600px" height="550px" src={{logo}}/>
+              </section>
+              </div>
+          <div class="page" id="p2">
+            <section class='icon fa fa-keyboard-o' style="padding-right: 300px;"><span class="title">Dashboard</span>
+              <app-form-pop-up></app-form-pop-up>
+            </section>
+
+            <!--dashboard form -->
+
+
+
+
+
+          </div>
+
+
+          <div class="page" id="p3">
+            <section class="icon fa fa-users" style="padding-right: 250px;"><span class="title">Team</span></section>
+
+
+                <div class="container">
+                  <div class="at-grid" data-column="3">
+                    <div class="at-column">
+                      <div class="at-user">
+                        <div class="at-user__avatar"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg"/></div>
+                        <div class="at-user__name">Arvinder Pal Singh Bali</div>
+                        <div class="at-user__title">Data Engineer</div>
+                      </div>
+                    </div>
+                    <div class="at-column">
+                      <div class="at-user">
+                        <div class="at-user__avatar"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg"/></div>
+                        <div class="at-user__name">Mexson Fernandes</div>
+                        <div class="at-user__title">Full Stack Developer</div>
+                      </div>
+                    </div>
+                    <div class="at-column">
+                      <div class="at-user">
+                        <div class="at-user__avatar"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/tonychester/128.jpg"/></div>
+                        <div class="at-user__name">Sourabh Choubey</div>
+                        <div class="at-user__title">System Architect</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+          </div>
+
+
+
+          <div class="page" id="p4">
+            <section class="icon fa fa-project-diagram" style="padding-right: 300px;">
+              <span class="title">Work Flow &amp; Research</span>
+               </section>
+
+               <img style="width:900px;
+                            height: 800px; padding-left:20%" src="/assets/images/carousel_images/Process.png" />
+
+          </div>
+
+          <div class="page" id="p5">
+
+            <section class="icon fa fa-screwdriver" style="padding-right: 300px;">
+              <span class="title">Platform</span>
+
+            </section>
+
+            <section>
+              <a target="_blank" href={{data[0].hadoop_url}} style="padding-left: 10%;">
+                <img class="shake" src="/assets/images/home_icons/hadoop.png" width="400px" height="300px" />
+              </a>
+
+              <a target="_blank" href={{data[0].colab_url}} style="padding-left: 3%;">
+                  <img class="shake" src="/assets/images/home_icons/colab.png" width="500px" height="300px" />
+                </a>
+
+              <a target="_blank" href={{data[0].jupyter_url}} style="padding-left: 5%;">
+                  <img class="shake" src="/assets/images/home_icons/jupyter.png" width="300px" height="300px" />
+                </a>
+
+           </section>
+           <div style="color:white;padding-top:10px;padding-left:25%;font-size:30px;">Click on above icons to open the Platform UI</div>
+            <div style="height:50px"></div>
+
+            <h6 align="left" style="padding-left:10%;">
+              <img class="platform" src="/assets/images/platform_icons/anaconda.png" width="140px" height="80px"  />
+              <img class="platform" src="/assets/images/platform_icons/javascript.png" width="110px" height="130px" />
+              <img class="platform" src="/assets/images/platform_icons/html5.png" width="150px" height="130px" />
+              <img class="platform" src="/assets/images/platform_icons/Matplotlib.png" width="140px" height="80px" />
+              <img class="platform" src="/assets/images/platform_icons/numpy.png" width="140px" height="140px" />
+              <img class="platform" src="/assets/images/platform_icons/pandas.png" width="230px" height="80px" /><br/>
+              <img class="platform" src="/assets/images/platform_icons/R.png" width="140px" height="120px" />
+              <img class="platform" src="/assets/images/platform_icons/scipy.png" width="80px" height="80px" />
+              <img class="platform" src="/assets/images/platform_icons/sklearn.png" width="140px" height="80px" />
+              <img class="platform" src="/assets/images/platform_icons/spacy.png" width="140px" height="80px" />
+              <img class="platform" src="/assets/images/platform_icons/spark.png" width="140px" height="80px" />
+              <img class="platform" src="/assets/images/platform_icons/tensorflow.png" width="80px" height="100px" />
+              <img class="platform" src="/assets/images/platform_icons/xgboost.png" width="140px" height="80px" />
+            </h6>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
