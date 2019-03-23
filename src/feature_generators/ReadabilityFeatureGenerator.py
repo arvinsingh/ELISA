@@ -32,7 +32,7 @@ class ReadabilityFeatureGenerator(FeatureGenerator):
             words = nltk.tokenize.word_tokenize(text.lower())
             word_count = len(words)
             vocab_size = len(set(words))
-            diversity_score = word_count / vocab_size
+            diversity_score = vocab_size / word_count
             return diversity_score
 
         def get_counts(text, word_list):
