@@ -29,7 +29,7 @@ class ReadabilityFeatureGenerator(FeatureGenerator):
         print("\n---Generating Readability Features:---\n")
 
         def lexical_diversity(text):
-            word_count = len(text)
+            word_count = len(nltk.tokenize.word_tokenize(text))
             vocab_size = len(set(text))
             diversity_score = word_count / vocab_size
             return diversity_score
