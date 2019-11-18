@@ -1,11 +1,13 @@
 [![OpenSources Data](https://img.shields.io/badge/Data-OpenSources-blue.svg)](http://opensources.co)
 
-# ``ELISA`` (Exploratory Liable Information Scanning in Articles) - The AI for Fake News Detection
+# Visit [ELISA](https://elisa.robomx.tech)
+
+# ``ELISA`` (Exploratory reLiable Information Scanning in Articles) - The AI for Fake News Detection
 
 # ``Team``
-  1) Arvinder Pal Singh Bali (8615130)
-  2) Mexson Fernandes (8615208)
-  3) Sourabh Choubey (8615125)
+  1) [Arvinder Pal Singh Bali](https://github.com/arvinsingh)
+  2) [Mexson Fernandes](https://github.com/MexsonFernandes)
+  3) [Sourabh Choubey](https://github.com/Wizard-Z)
   
 # ``Table of Content``
   1) <a href="docs/DPF.md">Draft Proposal Form</a>
@@ -36,6 +38,7 @@
 - Java 8
 
 ###### ``References``
+- https://github.com/arvinsingh/talos-fnc-1-py3
 - https://github.com/fake-news-detector
 - https://medium.com/@Genyunus/detecting-fake-news-with-nlp-c893ec31dee8
 - https://thetrustproject.org/
@@ -82,3 +85,4 @@
   - https://github.com/GeorgeMcIntire/fake_real_news_dataset
   - https://github.com/PaytmBuildForIndia/FakeNews
   - https://github.com/fake-news-detector/scrappers/tree/master/scrappers
+
